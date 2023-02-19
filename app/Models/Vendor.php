@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -13,10 +12,10 @@ use Illuminate\Database\Eloquent\Model;
  * @property-read int|null $notifications_count
  * @property-read \Illuminate\Database\Eloquent\Collection<int, \Laravel\Sanctum\PersonalAccessToken> $tokens
  * @property-read int|null $tokens_count
- * @method static Builder|Vendor active()
- * @method static Builder|Vendor newModelQuery()
- * @method static Builder|Vendor newQuery()
- * @method static Builder|Vendor query()
+ * @method static \Illuminate\Database\Eloquent\Builder|Vendor active()
+ * @method static \Illuminate\Database\Eloquent\Builder|Vendor newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Vendor newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Vendor query()
  * @mixin \Eloquent
  */
 class Vendor extends User
