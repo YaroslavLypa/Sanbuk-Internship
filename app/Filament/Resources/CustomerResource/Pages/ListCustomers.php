@@ -1,28 +1,31 @@
 <?php
 
-namespace App\Filament\Resources\UserResource\Pages;
+namespace App\Filament\Resources\CustomerResource\Pages;
 
-use App\Filament\Resources\UserResource;
+use App\Filament\Resources\CustomerResource;
 use App\Models\User;
 use Filament\Pages\Actions;
 use Filament\Resources\Pages\ListRecords;
 use Filament\Resources\Table;
 use Filament\Tables\Columns\BadgeColumn;
-use Filament\Tables\Columns\ImageColumn;
-use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Columns\SpatieMediaLibraryImageColumn;
-use Filament\AvatarProviders\Contracts\AvatarProvider;
+use Filament\Tables\Columns\TextColumn;
 use Illuminate\Database\Eloquent\Builder;
 
-class ListUsers extends ListRecords
+class ListCustomers extends ListRecords
 {
-    protected static string $resource = UserResource::class;
+    protected static string $resource = CustomerResource::class;
 
     protected function getActions(): array
     {
         return [
             Actions\CreateAction::make(),
         ];
+    }
+
+    protected function getTableQuery(): Builder
+    {
+        return User::query()->where('type', User::TYPE_USER);
     }
 
     protected function table(Table $table): Table
@@ -44,7 +47,6 @@ class ListUsers extends ListRecords
                     ->enum(User::TYPE_LIST)
                     ->colors([
                         'primary' => User::TYPE_USER,
-                        'success' => User::TYPE_VENDOR,
                     ]),
             ])
             ->filters([
