@@ -3,7 +3,7 @@
 
 
 <aside>
-    <strong>Base URL</strong>: <code>https://sanbuk-internship.test</code>
+    <strong>Base URL</strong>: <code>http://sanbuk-internship-main</code>
 </aside>
 
 This documentation aims to provide all the information you need to work with our API.

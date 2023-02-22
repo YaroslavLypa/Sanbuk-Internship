@@ -2,24 +2,29 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
+use Eloquent;
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Notifications\DatabaseNotification;
+use Illuminate\Notifications\DatabaseNotificationCollection;
+use Laravel\Sanctum\PersonalAccessToken;
 
 /**
  * App\Models\Vendor
  *
- * @property-read \Illuminate\Notifications\DatabaseNotificationCollection<int, \Illuminate\Notifications\DatabaseNotification> $notifications
+ * @property-read DatabaseNotificationCollection<int, DatabaseNotification> $notifications
  * @property-read int|null $notifications_count
- * @property-read \Illuminate\Database\Eloquent\Collection<int, \Laravel\Sanctum\PersonalAccessToken> $tokens
+ * @property-read Collection<int, PersonalAccessToken> $tokens
  * @property-read int|null $tokens_count
- * @method static \Illuminate\Database\Eloquent\Builder|Vendor active()
- * @method static \Illuminate\Database\Eloquent\Builder|Vendor newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|Vendor newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|Vendor query()
- * @mixin \Eloquent
+ * @method static Builder|Vendor active()
+ * @method static Builder|Vendor newModelQuery()
+ * @method static Builder|Vendor newQuery()
+ * @method static Builder|Vendor query()
+ * @mixin Eloquent
  */
 class Vendor extends User
 {
+    protected $table = 'users';
     /**
      * The "booted" method of the model.
      *

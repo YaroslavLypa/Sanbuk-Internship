@@ -26,35 +26,35 @@ endpoints:
         name: first_name
         description: ''
         required: true
-        example: autem
+        example: voluptatibus
         type: string
         custom: []
       last_name:
         name: last_name
         description: ''
         required: true
-        example: praesentium
+        example: et
         type: string
         custom: []
       phone:
         name: phone
         description: ''
         required: true
-        example: perspiciatis
+        example: quibusdam
         type: string
         custom: []
       email:
         name: email
         description: 'Must be a valid email address.'
         required: false
-        example: nicole.pagac@example.net
+        example: foster.lowe@example.com
         type: string
         custom: []
     cleanBodyParameters:
-      first_name: autem
-      last_name: praesentium
-      phone: perspiciatis
-      email: nicole.pagac@example.net
+      first_name: voluptatibus
+      last_name: et
+      phone: quibusdam
+      email: foster.lowe@example.com
     fileParameters: []
     responses: []
     responseFields: []
@@ -88,11 +88,11 @@ endpoints:
         name: phone
         description: ''
         required: true
-        example: tenetur
+        example: aut
         type: string
         custom: []
     cleanBodyParameters:
-      phone: tenetur
+      phone: aut
     fileParameters: []
     responses: []
     responseFields: []
@@ -126,19 +126,19 @@ endpoints:
         name: phone
         description: ''
         required: true
-        example: sunt
+        example: minus
         type: string
         custom: []
       code:
         name: code
         description: ''
         required: true
-        example: corrupti
+        example: quasi
         type: string
         custom: []
     cleanBodyParameters:
-      phone: sunt
-      code: corrupti
+      phone: minus
+      code: quasi
     fileParameters: []
     responses: []
     responseFields: []

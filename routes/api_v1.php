@@ -1,15 +1,23 @@
 <?php
 
-use App\Http\Controllers\V1\UserController;
 use App\Http\Controllers\V1\BannerController;
+use App\Http\Controllers\V1\ExperienceController;
+use App\Http\Controllers\V1\UserController;
 use Illuminate\Support\Facades\Route;
 
-Route::post('/auth/sign-up', [UserController::class, 'signUp']);
+Route::prefix('/auth')->group(function () {
+    Route::post('/sign-up', [UserController::class, 'signUp']);
+    Route::post('/sign-in', [UserController::class, 'signIn']);
+    Route::post('/verification', [UserController::class, 'verification']);
+});
 
-Route::post('/auth/sign-in', [UserController::class, 'signIn']);
-Route::post('/auth/verification', [UserController::class, 'verification']);
+Route::prefix('/user')->name('user.')->middleware('auth:sanctum')->group(function () {
+    Route::get('/profile', [UserController::class, 'profile'])->name('profile');
+});
 
-Route::get('/user/profile', [UserController::class, 'profile'])->middleware('auth:sanctum');
+Route::prefix('/experiences')->group(function () {
+    Route::get('/', [ExperienceController::class, 'index']);
+});
 
 Route::get('/banner/{bannerType}', [BannerController::class, 'getBannerByType']);
 
