@@ -3,12 +3,14 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+use App\Events\UserCreated;
 use Cmdinglasan\FilamentBoringAvatars\Traits\HasAvatarUrl;
 use Database\Factories\UserFactory;
 use Eloquent;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\DatabaseNotification;
 use Illuminate\Notifications\DatabaseNotificationCollection;
@@ -59,7 +61,7 @@ use Spatie\MediaLibrary\MediaCollections\Models\Media;
  */
 class User extends Authenticatable implements HasMedia
 {
-    use HasApiTokens, HasFactory, Notifiable, HasAvatarUrl, InteractsWithMedia;
+    use HasApiTokens, HasFactory, Notifiable, HasAvatarUrl, InteractsWithMedia, SoftDeletes;
 
     const TYPE_USER = 0;
     const TYPE_VENDOR = 1;
@@ -111,6 +113,10 @@ class User extends Authenticatable implements HasMedia
     protected $casts = [
         'email_verified_at' => 'datetime',
         'avatar' => 'array',
+    ];
+
+    protected $dispatchesEvents = [
+        'created' => UserCreated::class,
     ];
 
     public function registerMediaConversions(Media $media = null): void

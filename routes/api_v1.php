@@ -13,6 +13,7 @@ Route::prefix('/auth')->group(function () {
 
 Route::prefix('/user')->name('user.')->middleware('auth:sanctum')->group(function () {
     Route::get('/profile', [UserController::class, 'profile'])->name('profile');
+    Route::delete('/profile', [UserController::class, 'delete'])->name('profile');
 });
 
 Route::prefix('/experiences')->group(function () {

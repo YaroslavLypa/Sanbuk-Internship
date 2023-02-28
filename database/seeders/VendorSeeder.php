@@ -24,7 +24,9 @@ class VendorSeeder extends Seeder
                 'name' => fake()->name,
                 'first_name' => fake()->firstName,
                 'last_name' => fake()->lastName,
+                'email' => fake()->email,
                 'password' => Hash::make('password'),
+                'avatar' => fake()->imageUrl,
             ]);
         }
     }

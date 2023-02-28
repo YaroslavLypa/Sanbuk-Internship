@@ -6,12 +6,12 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\V1\User\SignInRequest;
 use App\Http\Requests\V1\User\SignUpRequest;
 use App\Http\Requests\V1\User\VerificationRequest;
-use App\Models\User;
 use App\Services\TwilioService;
 use App\Services\UserService;
 use Knuckles\Scribe\Attributes\Authenticated;
 use Knuckles\Scribe\Attributes\Endpoint;
 use Knuckles\Scribe\Attributes\Group;
+use Knuckles\Scribe\Attributes\Header;
 use Knuckles\Scribe\Attributes\Subgroup;
 use Twilio\Exceptions\RestException;
 
@@ -61,8 +61,18 @@ class UserController extends Controller
     #[Subgroup('Profile')]
     #[Authenticated]
     #[Endpoint('Get profile')]
+    #[Header('Authorization', 'Bearer ')]
     public function profile()
     {
         return auth()->user();
+    }
+
+    #[Subgroup('Profile')]
+    #[Authenticated]
+    #[Endpoint('Delete profile')]
+    #[Header('Authorization', 'Bearer ')]
+    public function delete()
+    {
+        return auth()->user()->delete();
     }
 }

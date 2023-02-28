@@ -51,10 +51,10 @@
 </a>
 <div class="tocify-wrapper">
 
-            <div class="lang-selector">
-                                            <button type="button" class="lang-button" data-language-name="bash">bash</button>
-                                            <button type="button" class="lang-button" data-language-name="javascript">javascript</button>
-                    </div>
+    <div class="lang-selector">
+        <button type="button" class="lang-button" data-language-name="bash">bash</button>
+        <button type="button" class="lang-button" data-language-name="javascript">javascript</button>
+    </div>
 
     <div class="search">
         <input type="text" class="search" id="input-search" placeholder="Search">
@@ -103,39 +103,41 @@
             <ul id="tocify-subheader-user" class="tocify-subheader">
                 <li class="tocify-item level-2" data-unique="user-auth">
                     <a href="#user-auth">Auth</a>
-                            </li>
-                                                            <ul id="tocify-subheader-user-auth" class="tocify-subheader">
-                                                                            <li class="tocify-item level-3" data-unique="user-POSTapi-v1-auth-sign-up">
-                                            <a href="#user-POSTapi-v1-auth-sign-up">Sign Up</a>
-                                        </li>
-                                                                            <li class="tocify-item level-3" data-unique="user-POSTapi-v1-auth-sign-in">
-                                            <a href="#user-POSTapi-v1-auth-sign-in">Sign In</a>
-                                        </li>
-                                                                            <li class="tocify-item level-3" data-unique="user-POSTapi-v1-auth-verification">
-                                            <a href="#user-POSTapi-v1-auth-verification">SMS Verification</a>
-                                        </li>
-                                                                    </ul>
-                                                                                <li class="tocify-item level-2" data-unique="user-profile">
-                                <a href="#user-profile">Profile</a>
-                            </li>
-                                                            <ul id="tocify-subheader-user-profile" class="tocify-subheader">
-                                                                            <li class="tocify-item level-3" data-unique="user-GETapi-v1-user-profile">
-                                            <a href="#user-GETapi-v1-user-profile">Get profile</a>
-                                        </li>
-                                                                    </ul>
-                                                                        </ul>
-                            </ul>
-            </div>
+                </li>
+                <ul id="tocify-subheader-user-auth" class="tocify-subheader">
+                    <li class="tocify-item level-3" data-unique="user-POSTapi-v1-auth-sign-up">
+                        <a href="#user-POSTapi-v1-auth-sign-up">Sign Up</a>
+                    </li>
+                    <li class="tocify-item level-3" data-unique="user-POSTapi-v1-auth-sign-in">
+                        <a href="#user-POSTapi-v1-auth-sign-in">Sign In</a>
+                    </li>
+                    <li class="tocify-item level-3" data-unique="user-POSTapi-v1-auth-verification">
+                        <a href="#user-POSTapi-v1-auth-verification">SMS Verification</a>
+                    </li>
+                </ul>
+                <li class="tocify-item level-2" data-unique="user-profile">
+                    <a href="#user-profile">Profile</a>
+                </li>
+                <ul id="tocify-subheader-user-profile" class="tocify-subheader">
+                    <li class="tocify-item level-3" data-unique="user-GETapi-v1-user-profile">
+                        <a href="#user-GETapi-v1-user-profile">Get profile</a>
+                    </li>
+                    <li class="tocify-item level-3" data-unique="user-DELETEapi-v1-user-profile">
+                        <a href="#user-DELETEapi-v1-user-profile">Delete profile</a>
+                    </li>
+                </ul>
+            </ul>
+        </ul>
+    </div>
 
     <ul class="toc-footer" id="toc-footer">
-                    <li style="padding-bottom: 5px;"><a href="{{ route("scribe.postman") }}">View Postman collection</a></li>
-                            <li style="padding-bottom: 5px;"><a href="{{ route("scribe.openapi") }}">View OpenAPI
-                                    spec</a></li>
+        <li style="padding-bottom: 5px;"><a href="{{ route("scribe.postman") }}">View Postman collection</a></li>
+        <li style="padding-bottom: 5px;"><a href="{{ route("scribe.openapi") }}">View OpenAPI spec</a></li>
         <li><a href="http://github.com/knuckleswtf/scribe">Documentation powered by Scribe ✍</a></li>
     </ul>
 
     <ul class="toc-footer" id="last-updated">
-        <li>Last updated: February 21, 2023</li>
+        <li>Last updated: February 28, 2023</li>
     </ul>
 </div>
 
@@ -172,14 +174,14 @@
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://sanbuk-internship-main/api/v1/banner/2" \
+    --get "http://sanbuk-internship-main/api/v1/banner/5" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://sanbuk-internship-main/api/v1/banner/2"
+    "http://sanbuk-internship-main/api/v1/banner/5"
 );
 
 const headers = {
@@ -285,10 +287,10 @@ access-control-allow-origin: *
                 &nbsp;
                 <input type="number" style="display: none"
                        name="bannerType" data-endpoint="GETapi-v1-banner--bannerType-"
-                       value="2"
+                       value="5"
                        data-component="url">
                 <br>
-                <p>Example: <code>2</code></p>
+                <p>Example: <code>5</code></p>
             </div>
         </form>
 
@@ -349,95 +351,264 @@ access-control-allow-origin: *
     &quot;status&quot;: 200,
     &quot;data&quot;: [
         {
+            &quot;id&quot;: 1,
+            &quot;status&quot;: 1,
+            &quot;vendor_id&quot;: 1,
+            &quot;type_id&quot;: 3,
+            &quot;trip_type_id&quot;: 2,
+            &quot;charter_type_id&quot;: 3,
+            &quot;departure_id&quot;: 1,
+            &quot;name&quot;: &quot;Bruce Mosciski&quot;,
+            &quot;description&quot;: &quot;Repellat dolor officiis libero. Voluptas quasi est fugit aut. Harum maiores culpa porro. Labore expedita rerum neque assumenda fugit. Officia libero accusamus expedita. Vel ex vel et quia.&quot;,
+            &quot;created_at&quot;: &quot;2023-02-28T15:52:49.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2023-02-28T15:52:49.000000Z&quot;
+        },
+        {
             &quot;id&quot;: 2,
             &quot;status&quot;: 1,
-            &quot;vendor_id&quot;: 3,
-            &quot;type_id&quot;: 3,
+            &quot;vendor_id&quot;: 1,
+            &quot;type_id&quot;: 1,
+            &quot;trip_type_id&quot;: 2,
+            &quot;charter_type_id&quot;: 1,
+            &quot;departure_id&quot;: 2,
+            &quot;name&quot;: &quot;Miss Antonietta Cremin&quot;,
+            &quot;description&quot;: &quot;Sequi laboriosam non asperiores accusamus quia dicta. Nemo cumque rerum doloribus ipsam sapiente blanditiis temporibus. Voluptatem consequatur minima facilis repudiandae incidunt sunt quisquam sunt.&quot;,
+            &quot;created_at&quot;: &quot;2023-02-28T15:52:50.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2023-02-28T15:52:50.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 3,
+            &quot;status&quot;: 1,
+            &quot;vendor_id&quot;: 2,
+            &quot;type_id&quot;: 2,
             &quot;trip_type_id&quot;: 3,
+            &quot;charter_type_id&quot;: 1,
+            &quot;departure_id&quot;: 3,
+            &quot;name&quot;: &quot;Flo Tillman&quot;,
+            &quot;description&quot;: &quot;Sit ipsum aliquid exercitationem excepturi libero. Ipsam hic ad qui sint est. Voluptate ex similique facilis provident dolores. Minima distinctio qui nobis sint mollitia.&quot;,
+            &quot;created_at&quot;: &quot;2023-02-28T15:52:50.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2023-02-28T15:52:50.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 4,
+            &quot;status&quot;: 1,
+            &quot;vendor_id&quot;: 1,
+            &quot;type_id&quot;: 2,
+            &quot;trip_type_id&quot;: 1,
+            &quot;charter_type_id&quot;: 1,
+            &quot;departure_id&quot;: 2,
+            &quot;name&quot;: &quot;Osbaldo Sporer&quot;,
+            &quot;description&quot;: &quot;Facilis porro suscipit ipsam. Est ratione in ad dolor dicta qui facilis. Placeat qui cumque recusandae error dolorem sapiente soluta. Provident ut id consequatur in illum.&quot;,
+            &quot;created_at&quot;: &quot;2023-02-28T15:52:50.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2023-02-28T15:52:50.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 5,
+            &quot;status&quot;: 1,
+            &quot;vendor_id&quot;: 3,
+            &quot;type_id&quot;: 2,
+            &quot;trip_type_id&quot;: 1,
             &quot;charter_type_id&quot;: 3,
             &quot;departure_id&quot;: 3,
-            &quot;name&quot;: &quot;Aniya Bashirian Jr.&quot;,
-            &quot;description&quot;: &quot;Velit dolorem voluptate et perspiciatis ea ipsa. Praesentium reprehenderit quia exercitationem non nemo illo ad sit. Neque veniam libero repudiandae consectetur.&quot;,
-            &quot;created_at&quot;: &quot;2023-02-21T18:45:20.000000Z&quot;,
-            &quot;updated_at&quot;: &quot;2023-02-21T18:45:20.000000Z&quot;
+            &quot;name&quot;: &quot;Prof. Levi Littel PhD&quot;,
+            &quot;description&quot;: &quot;Eaque ut doloribus excepturi tempore similique voluptatum. Nesciunt quia nulla qui quos odio occaecati aut.&quot;,
+            &quot;created_at&quot;: &quot;2023-02-28T15:52:50.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2023-02-28T15:52:50.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 6,
+            &quot;status&quot;: 1,
+            &quot;vendor_id&quot;: 2,
+            &quot;type_id&quot;: 2,
+            &quot;trip_type_id&quot;: 3,
+            &quot;charter_type_id&quot;: 3,
+            &quot;departure_id&quot;: 1,
+            &quot;name&quot;: &quot;Vergie McClure&quot;,
+            &quot;description&quot;: &quot;Sint maiores distinctio dicta laborum eius. Aut repellendus quis voluptas aut est. Consectetur eius qui corrupti iste sit vero distinctio ipsa. Nemo quia eos est quas enim.&quot;,
+            &quot;created_at&quot;: &quot;2023-02-28T15:52:50.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2023-02-28T15:52:50.000000Z&quot;
         },
         {
             &quot;id&quot;: 7,
             &quot;status&quot;: 1,
             &quot;vendor_id&quot;: 3,
             &quot;type_id&quot;: 1,
-            &quot;trip_type_id&quot;: 3,
-            &quot;charter_type_id&quot;: 2,
+            &quot;trip_type_id&quot;: 1,
+            &quot;charter_type_id&quot;: 1,
             &quot;departure_id&quot;: 3,
-            &quot;name&quot;: &quot;Graciela Hoeger&quot;,
-            &quot;description&quot;: &quot;Omnis nostrum est vero nemo sequi. Quo id reiciendis nisi aut velit et. Non ipsam minima non et repudiandae rerum eaque at. Et quidem non et quia. Est voluptatum consequatur voluptas quisquam.&quot;,
-            &quot;created_at&quot;: &quot;2023-02-21T18:45:20.000000Z&quot;,
-            &quot;updated_at&quot;: &quot;2023-02-21T18:45:20.000000Z&quot;
+            &quot;name&quot;: &quot;Ernie Christiansen&quot;,
+            &quot;description&quot;: &quot;Nihil tenetur fugit rem cupiditate tempora sed nobis nemo. Nobis ipsum officiis officia aut ipsum. Ut harum odio non.&quot;,
+            &quot;created_at&quot;: &quot;2023-02-28T15:52:50.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2023-02-28T15:52:50.000000Z&quot;
         },
         {
-            &quot;id&quot;: 10,
+            &quot;id&quot;: 8,
+            &quot;status&quot;: 1,
+            &quot;vendor_id&quot;: 2,
+            &quot;type_id&quot;: 1,
+            &quot;trip_type_id&quot;: 3,
+            &quot;charter_type_id&quot;: 1,
+            &quot;departure_id&quot;: 3,
+            &quot;name&quot;: &quot;Ms. Duane Schuster PhD&quot;,
+            &quot;description&quot;: &quot;Eos quidem facere porro quia non dolores. Aut necessitatibus autem consequatur expedita eveniet eos. Ex eos saepe tempore alias qui quia. Et quis aliquam at necessitatibus ullam quae sed amet.&quot;,
+            &quot;created_at&quot;: &quot;2023-02-28T15:52:50.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2023-02-28T15:52:50.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 9,
             &quot;status&quot;: 1,
             &quot;vendor_id&quot;: 3,
             &quot;type_id&quot;: 2,
             &quot;trip_type_id&quot;: 3,
+            &quot;charter_type_id&quot;: 3,
+            &quot;departure_id&quot;: 2,
+            &quot;name&quot;: &quot;Lonnie Hackett&quot;,
+            &quot;description&quot;: &quot;Maxime qui quam veritatis maiores. Corporis velit rerum doloribus veniam sapiente velit quidem. Similique possimus earum nemo qui nihil.&quot;,
+            &quot;created_at&quot;: &quot;2023-02-28T15:52:50.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2023-02-28T15:52:50.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 10,
+            &quot;status&quot;: 1,
+            &quot;vendor_id&quot;: 2,
+            &quot;type_id&quot;: 1,
+            &quot;trip_type_id&quot;: 1,
+            &quot;charter_type_id&quot;: 2,
+            &quot;departure_id&quot;: 1,
+            &quot;name&quot;: &quot;Derick Abshire&quot;,
+            &quot;description&quot;: &quot;Saepe incidunt voluptatem sed qui. Voluptas saepe aut molestiae nesciunt iste. Temporibus ut facere commodi iure ducimus officiis quasi omnis.&quot;,
+            &quot;created_at&quot;: &quot;2023-02-28T15:52:50.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2023-02-28T15:52:50.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 11,
+            &quot;status&quot;: 1,
+            &quot;vendor_id&quot;: 1,
+            &quot;type_id&quot;: 3,
+            &quot;trip_type_id&quot;: 2,
             &quot;charter_type_id&quot;: 1,
-            &quot;departure_id&quot;: 3,
-            &quot;name&quot;: &quot;Johnathan Hoeger&quot;,
-            &quot;description&quot;: &quot;Laboriosam vel atque rerum aut pariatur unde aperiam. Ad et ut nemo distinctio dolor. Qui voluptatem in aut odit natus. Vero unde voluptate esse earum iste labore.&quot;,
-            &quot;created_at&quot;: &quot;2023-02-21T18:45:20.000000Z&quot;,
-            &quot;updated_at&quot;: &quot;2023-02-21T18:45:20.000000Z&quot;
+            &quot;departure_id&quot;: 2,
+            &quot;name&quot;: &quot;Alexandrine Hessel&quot;,
+            &quot;description&quot;: &quot;Maiores rem velit voluptas voluptatem molestiae. Ex ea incidunt sed similique. Voluptatem molestiae et est ut voluptas iusto eum.&quot;,
+            &quot;created_at&quot;: &quot;2023-02-28T15:52:50.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2023-02-28T15:52:50.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 12,
+            &quot;status&quot;: 1,
+            &quot;vendor_id&quot;: 3,
+            &quot;type_id&quot;: 3,
+            &quot;trip_type_id&quot;: 3,
+            &quot;charter_type_id&quot;: 1,
+            &quot;departure_id&quot;: 2,
+            &quot;name&quot;: &quot;Erika Mante&quot;,
+            &quot;description&quot;: &quot;Eum perspiciatis velit eum ipsum corrupti velit et. Voluptas tempora fugit dolorem dicta.&quot;,
+            &quot;created_at&quot;: &quot;2023-02-28T15:52:50.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2023-02-28T15:52:50.000000Z&quot;
         },
         {
             &quot;id&quot;: 13,
             &quot;status&quot;: 1,
-            &quot;vendor_id&quot;: 3,
+            &quot;vendor_id&quot;: 2,
             &quot;type_id&quot;: 1,
-            &quot;trip_type_id&quot;: 3,
-            &quot;charter_type_id&quot;: 2,
-            &quot;departure_id&quot;: 1,
-            &quot;name&quot;: &quot;Matt Anderson&quot;,
-            &quot;description&quot;: &quot;Voluptatem sint velit fuga. Est tempore delectus est aliquam quis omnis. Rerum numquam in ullam libero dolores praesentium autem.&quot;,
-            &quot;created_at&quot;: &quot;2023-02-21T18:45:20.000000Z&quot;,
-            &quot;updated_at&quot;: &quot;2023-02-21T18:45:20.000000Z&quot;
+            &quot;trip_type_id&quot;: 1,
+            &quot;charter_type_id&quot;: 3,
+            &quot;departure_id&quot;: 2,
+            &quot;name&quot;: &quot;Hilbert Ondricka&quot;,
+            &quot;description&quot;: &quot;Ea beatae cum perspiciatis. Quasi assumenda et quis qui atque. Consequuntur cupiditate odio eos ipsam qui. Ea qui repellendus deserunt et deserunt aut.&quot;,
+            &quot;created_at&quot;: &quot;2023-02-28T15:52:50.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2023-02-28T15:52:50.000000Z&quot;
         },
         {
             &quot;id&quot;: 14,
             &quot;status&quot;: 1,
             &quot;vendor_id&quot;: 3,
-            &quot;type_id&quot;: 1,
+            &quot;type_id&quot;: 2,
             &quot;trip_type_id&quot;: 1,
+            &quot;charter_type_id&quot;: 1,
+            &quot;departure_id&quot;: 2,
+            &quot;name&quot;: &quot;Dr. Stan Wiza&quot;,
+            &quot;description&quot;: &quot;Esse temporibus vero doloremque aspernatur facere. Laboriosam illum laudantium cum qui corrupti impedit.&quot;,
+            &quot;created_at&quot;: &quot;2023-02-28T15:52:50.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2023-02-28T15:52:50.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 15,
+            &quot;status&quot;: 1,
+            &quot;vendor_id&quot;: 1,
+            &quot;type_id&quot;: 2,
+            &quot;trip_type_id&quot;: 3,
             &quot;charter_type_id&quot;: 3,
             &quot;departure_id&quot;: 3,
-            &quot;name&quot;: &quot;Rex Kuvalis&quot;,
-            &quot;description&quot;: &quot;Voluptas quia dolor qui et temporibus quis. Enim ut velit cumque autem velit. Omnis ad quia nihil nemo.&quot;,
-            &quot;created_at&quot;: &quot;2023-02-21T18:45:20.000000Z&quot;,
-            &quot;updated_at&quot;: &quot;2023-02-21T18:45:20.000000Z&quot;
+            &quot;name&quot;: &quot;Leonard Bednar&quot;,
+            &quot;description&quot;: &quot;Non sapiente asperiores eligendi voluptate ratione enim aut. Non dolorem quasi ipsam laudantium nulla quo rem exercitationem. Sit ullam fugiat deserunt qui quos et.&quot;,
+            &quot;created_at&quot;: &quot;2023-02-28T15:52:50.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2023-02-28T15:52:50.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 16,
+            &quot;status&quot;: 1,
+            &quot;vendor_id&quot;: 3,
+            &quot;type_id&quot;: 1,
+            &quot;trip_type_id&quot;: 2,
+            &quot;charter_type_id&quot;: 3,
+            &quot;departure_id&quot;: 2,
+            &quot;name&quot;: &quot;Ms. Makenzie Feest PhD&quot;,
+            &quot;description&quot;: &quot;Molestias commodi eaque et odit omnis. Accusamus nam eius perferendis consequuntur dolores officia in ut. Cumque vel unde ut blanditiis sapiente.&quot;,
+            &quot;created_at&quot;: &quot;2023-02-28T15:52:50.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2023-02-28T15:52:50.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 17,
+            &quot;status&quot;: 1,
+            &quot;vendor_id&quot;: 1,
+            &quot;type_id&quot;: 3,
+            &quot;trip_type_id&quot;: 3,
+            &quot;charter_type_id&quot;: 3,
+            &quot;departure_id&quot;: 2,
+            &quot;name&quot;: &quot;Ms. Eda Wiza II&quot;,
+            &quot;description&quot;: &quot;Architecto dolores eum perferendis placeat. Vel accusantium enim suscipit ex qui modi qui. Blanditiis magni praesentium facilis aut soluta dolores.&quot;,
+            &quot;created_at&quot;: &quot;2023-02-28T15:52:50.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2023-02-28T15:52:50.000000Z&quot;
         },
         {
             &quot;id&quot;: 18,
             &quot;status&quot;: 1,
+            &quot;vendor_id&quot;: 2,
+            &quot;type_id&quot;: 1,
+            &quot;trip_type_id&quot;: 2,
+            &quot;charter_type_id&quot;: 2,
+            &quot;departure_id&quot;: 2,
+            &quot;name&quot;: &quot;Aurore O&#039;Kon&quot;,
+            &quot;description&quot;: &quot;Consequatur accusantium porro veniam occaecati. Quae dolores qui consequuntur. Facere dolor aliquid omnis eligendi ratione.&quot;,
+            &quot;created_at&quot;: &quot;2023-02-28T15:52:50.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2023-02-28T15:52:50.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 19,
+            &quot;status&quot;: 1,
             &quot;vendor_id&quot;: 3,
             &quot;type_id&quot;: 2,
             &quot;trip_type_id&quot;: 1,
-            &quot;charter_type_id&quot;: 2,
-            &quot;departure_id&quot;: 3,
-            &quot;name&quot;: &quot;Amara Rowe&quot;,
-            &quot;description&quot;: &quot;Dignissimos nam sed labore incidunt quia et. Exercitationem nobis et nihil temporibus est. Architecto qui rem possimus quidem quis animi pariatur nisi.&quot;,
-            &quot;created_at&quot;: &quot;2023-02-21T18:45:20.000000Z&quot;,
-            &quot;updated_at&quot;: &quot;2023-02-21T18:45:20.000000Z&quot;
+            &quot;charter_type_id&quot;: 3,
+            &quot;departure_id&quot;: 1,
+            &quot;name&quot;: &quot;Dedrick Bashirian&quot;,
+            &quot;description&quot;: &quot;Laudantium eum quam dignissimos. Quas non velit quia corrupti quisquam. Praesentium id in ex commodi voluptas. Est tempore modi quis et saepe.&quot;,
+            &quot;created_at&quot;: &quot;2023-02-28T15:52:50.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2023-02-28T15:52:50.000000Z&quot;
         },
         {
             &quot;id&quot;: 20,
             &quot;status&quot;: 1,
-            &quot;vendor_id&quot;: 3,
-            &quot;type_id&quot;: 2,
-            &quot;trip_type_id&quot;: 3,
+            &quot;vendor_id&quot;: 2,
+            &quot;type_id&quot;: 3,
+            &quot;trip_type_id&quot;: 1,
             &quot;charter_type_id&quot;: 1,
             &quot;departure_id&quot;: 1,
-            &quot;name&quot;: &quot;Estelle Willms&quot;,
-            &quot;description&quot;: &quot;Excepturi eveniet fugiat similique deleniti quaerat deserunt. Velit sed dolores odio. Assumenda mollitia in reprehenderit reiciendis quia. Aut labore vitae unde ea expedita architecto rerum.&quot;,
-            &quot;created_at&quot;: &quot;2023-02-21T18:45:20.000000Z&quot;,
-            &quot;updated_at&quot;: &quot;2023-02-21T18:45:20.000000Z&quot;
+            &quot;name&quot;: &quot;Guiseppe Turner&quot;,
+            &quot;description&quot;: &quot;Est nostrum qui est et qui quia. Saepe voluptate sit magnam ab a asperiores. Repellat modi voluptate et molestias ab.&quot;,
+            &quot;created_at&quot;: &quot;2023-02-28T15:52:50.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2023-02-28T15:52:50.000000Z&quot;
         }
     ]
 }</code>
@@ -511,10 +682,10 @@ access-control-allow-origin: *
 
 
         <h2 id="user-auth">Auth</h2>
-                                                    <h2 id="user-POSTapi-v1-auth-sign-up">Sign Up</h2>
+        <h2 id="user-POSTapi-v1-auth-sign-up">Sign Up</h2>
 
-<p>
-</p>
+        <p>
+        </p>
 
 
         <span id="example-requests-POSTapi-v1-auth-sign-up">
@@ -527,10 +698,10 @@ access-control-allow-origin: *
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"first_name\": \"voluptatibus\",
-    \"last_name\": \"et\",
-    \"phone\": \"quibusdam\",
-    \"email\": \"foster.lowe@example.com\"
+    \"first_name\": \"ut\",
+    \"last_name\": \"aut\",
+    \"phone\": \"molestiae\",
+    \"email\": \"tremblay.vallie@example.net\"
 }"
 </code></pre></div>
 
@@ -546,10 +717,10 @@ const headers = {
 };
 
 let body = {
-    "first_name": "voluptatibus",
-    "last_name": "et",
-    "phone": "quibusdam",
-    "email": "foster.lowe@example.com"
+    "first_name": "ut",
+    "last_name": "aut",
+    "phone": "molestiae",
+    "email": "tremblay.vallie@example.net"
 };
 
 fetch(url, {
@@ -562,13 +733,14 @@ fetch(url, {
 
         <span id="example-responses-POSTapi-v1-auth-sign-up">
 </span>
-<span id="execution-results-POSTapi-v1-auth-sign-up" hidden>
+        <span id="execution-results-POSTapi-v1-auth-sign-up" hidden>
     <blockquote>Received response<span
-                id="execution-response-status-POSTapi-v1-auth-sign-up"></span>:
+            id="execution-response-status-POSTapi-v1-auth-sign-up"></span>:
     </blockquote>
-    <pre class="json"><code id="execution-response-content-POSTapi-v1-auth-sign-up" style="max-height: 400px;"></code></pre>
+    <pre class="json"><code id="execution-response-content-POSTapi-v1-auth-sign-up"
+                            style="max-height: 400px;"></code></pre>
 </span>
-<span id="execution-error-POSTapi-v1-auth-sign-up" hidden>
+        <span id="execution-error-POSTapi-v1-auth-sign-up" hidden>
     <blockquote>Request failed with error:</blockquote>
     <pre><code id="execution-error-message-POSTapi-v1-auth-sign-up"></code></pre>
 </span>
@@ -610,19 +782,19 @@ fetch(url, {
                value="application/json"
                data-component="header">
     <br>
-<p>Example: <code>application/json</code></p>
-            </div>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-               name="Accept"                data-endpoint="POSTapi-v1-auth-sign-up"
-               value="application/json"
-               data-component="header">
-                                    <br>
                                     <p>Example: <code>application/json</code></p>
                                 </div>
+    <div style="padding-left: 28px; clear: unset;">
+        <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+        &nbsp;
+        &nbsp;
+        <input type="text" style="display: none"
+               name="Accept" data-endpoint="POSTapi-v1-auth-sign-up"
+               value="application/json"
+               data-component="header">
+        <br>
+        <p>Example: <code>application/json</code></p>
+    </div>
     <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
     <div style=" padding-left: 28px;  clear: unset;">
         <b style="line-height: 2;"><code>first_name</code></b>&nbsp;&nbsp;
@@ -630,10 +802,10 @@ fetch(url, {
         &nbsp;
         <input type="text" style="display: none"
                name="first_name" data-endpoint="POSTapi-v1-auth-sign-up"
-               value="voluptatibus"
+               value="ut"
                data-component="body">
         <br>
-        <p>Example: <code>voluptatibus</code></p>
+        <p>Example: <code>ut</code></p>
     </div>
     <div style=" padding-left: 28px;  clear: unset;">
         <b style="line-height: 2;"><code>last_name</code></b>&nbsp;&nbsp;
@@ -641,10 +813,10 @@ fetch(url, {
         &nbsp;
         <input type="text" style="display: none"
                name="last_name" data-endpoint="POSTapi-v1-auth-sign-up"
-               value="et"
+               value="aut"
                data-component="body">
         <br>
-        <p>Example: <code>et</code></p>
+        <p>Example: <code>aut</code></p>
     </div>
     <div style=" padding-left: 28px;  clear: unset;">
         <b style="line-height: 2;"><code>phone</code></b>&nbsp;&nbsp;
@@ -652,10 +824,10 @@ fetch(url, {
         &nbsp;
         <input type="text" style="display: none"
                name="phone" data-endpoint="POSTapi-v1-auth-sign-up"
-               value="quibusdam"
+               value="molestiae"
                data-component="body">
         <br>
-        <p>Example: <code>quibusdam</code></p>
+        <p>Example: <code>molestiae</code></p>
     </div>
     <div style=" padding-left: 28px;  clear: unset;">
         <b style="line-height: 2;"><code>email</code></b>&nbsp;&nbsp;
@@ -663,10 +835,10 @@ fetch(url, {
         <i>optional</i> &nbsp;
         <input type="text" style="display: none"
                name="email" data-endpoint="POSTapi-v1-auth-sign-up"
-               value="foster.lowe@example.com"
+               value="tremblay.vallie@example.net"
                data-component="body">
         <br>
-        <p>Must be a valid email address. Example: <code>foster.lowe@example.com</code></p>
+        <p>Must be a valid email address. Example: <code>tremblay.vallie@example.net</code></p>
     </div>
 </form>
 
@@ -686,7 +858,7 @@ fetch(url, {
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"phone\": \"aut\"
+    \"phone\": \"ea\"
 }"
 </code></pre></div>
 
@@ -702,7 +874,7 @@ const headers = {
 };
 
 let body = {
-    "phone": "aut"
+    "phone": "ea"
 };
 
 fetch(url, {
@@ -715,13 +887,14 @@ fetch(url, {
 
         <span id="example-responses-POSTapi-v1-auth-sign-in">
 </span>
-<span id="execution-results-POSTapi-v1-auth-sign-in" hidden>
+        <span id="execution-results-POSTapi-v1-auth-sign-in" hidden>
     <blockquote>Received response<span
-                id="execution-response-status-POSTapi-v1-auth-sign-in"></span>:
+            id="execution-response-status-POSTapi-v1-auth-sign-in"></span>:
     </blockquote>
-    <pre class="json"><code id="execution-response-content-POSTapi-v1-auth-sign-in" style="max-height: 400px;"></code></pre>
+    <pre class="json"><code id="execution-response-content-POSTapi-v1-auth-sign-in"
+                            style="max-height: 400px;"></code></pre>
 </span>
-<span id="execution-error-POSTapi-v1-auth-sign-in" hidden>
+        <span id="execution-error-POSTapi-v1-auth-sign-in" hidden>
     <blockquote>Request failed with error:</blockquote>
     <pre><code id="execution-error-message-POSTapi-v1-auth-sign-in"></code></pre>
 </span>
@@ -763,19 +936,19 @@ fetch(url, {
                value="application/json"
                data-component="header">
     <br>
-<p>Example: <code>application/json</code></p>
-            </div>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-               name="Accept"                data-endpoint="POSTapi-v1-auth-sign-in"
-               value="application/json"
-               data-component="header">
-                                    <br>
                                     <p>Example: <code>application/json</code></p>
                                 </div>
+    <div style="padding-left: 28px; clear: unset;">
+        <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+        &nbsp;
+        &nbsp;
+        <input type="text" style="display: none"
+               name="Accept" data-endpoint="POSTapi-v1-auth-sign-in"
+               value="application/json"
+               data-component="header">
+        <br>
+        <p>Example: <code>application/json</code></p>
+    </div>
     <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
     <div style=" padding-left: 28px;  clear: unset;">
         <b style="line-height: 2;"><code>phone</code></b>&nbsp;&nbsp;
@@ -783,10 +956,10 @@ fetch(url, {
         &nbsp;
         <input type="text" style="display: none"
                name="phone" data-endpoint="POSTapi-v1-auth-sign-in"
-               value="aut"
+               value="ea"
                data-component="body">
         <br>
-        <p>Example: <code>aut</code></p>
+        <p>Example: <code>ea</code></p>
     </div>
 </form>
 
@@ -806,8 +979,8 @@ fetch(url, {
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"phone\": \"minus\",
-    \"code\": \"quasi\"
+    \"phone\": \"omnis\",
+    \"code\": \"quas\"
 }"
 </code></pre></div>
 
@@ -823,8 +996,8 @@ const headers = {
 };
 
 let body = {
-    "phone": "minus",
-    "code": "quasi"
+    "phone": "omnis",
+    "code": "quas"
 };
 
 fetch(url, {
@@ -837,13 +1010,14 @@ fetch(url, {
 
         <span id="example-responses-POSTapi-v1-auth-verification">
 </span>
-<span id="execution-results-POSTapi-v1-auth-verification" hidden>
+        <span id="execution-results-POSTapi-v1-auth-verification" hidden>
     <blockquote>Received response<span
-                id="execution-response-status-POSTapi-v1-auth-verification"></span>:
+            id="execution-response-status-POSTapi-v1-auth-verification"></span>:
     </blockquote>
-    <pre class="json"><code id="execution-response-content-POSTapi-v1-auth-verification" style="max-height: 400px;"></code></pre>
+    <pre class="json"><code id="execution-response-content-POSTapi-v1-auth-verification"
+                            style="max-height: 400px;"></code></pre>
 </span>
-<span id="execution-error-POSTapi-v1-auth-verification" hidden>
+        <span id="execution-error-POSTapi-v1-auth-verification" hidden>
     <blockquote>Request failed with error:</blockquote>
     <pre><code id="execution-error-message-POSTapi-v1-auth-verification"></code></pre>
 </span>
@@ -885,19 +1059,19 @@ fetch(url, {
                value="application/json"
                data-component="header">
     <br>
-<p>Example: <code>application/json</code></p>
-            </div>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-               name="Accept"                data-endpoint="POSTapi-v1-auth-verification"
-               value="application/json"
-               data-component="header">
-                                    <br>
                                     <p>Example: <code>application/json</code></p>
                                 </div>
+    <div style="padding-left: 28px; clear: unset;">
+        <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+        &nbsp;
+        &nbsp;
+        <input type="text" style="display: none"
+               name="Accept" data-endpoint="POSTapi-v1-auth-verification"
+               value="application/json"
+               data-component="header">
+        <br>
+        <p>Example: <code>application/json</code></p>
+    </div>
     <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
     <div style=" padding-left: 28px;  clear: unset;">
         <b style="line-height: 2;"><code>phone</code></b>&nbsp;&nbsp;
@@ -905,10 +1079,10 @@ fetch(url, {
         &nbsp;
         <input type="text" style="display: none"
                name="phone" data-endpoint="POSTapi-v1-auth-verification"
-               value="minus"
+               value="omnis"
                data-component="body">
         <br>
-        <p>Example: <code>minus</code></p>
+        <p>Example: <code>omnis</code></p>
     </div>
     <div style=" padding-left: 28px;  clear: unset;">
         <b style="line-height: 2;"><code>code</code></b>&nbsp;&nbsp;
@@ -916,10 +1090,10 @@ fetch(url, {
         &nbsp;
         <input type="text" style="display: none"
                name="code" data-endpoint="POSTapi-v1-auth-verification"
-               value="quasi"
+               value="quas"
                data-component="body">
         <br>
-        <p>Example: <code>quasi</code></p>
+        <p>Example: <code>quas</code></p>
     </div>
 </form>
 
@@ -939,7 +1113,8 @@ fetch(url, {
     <pre><code class="language-bash">curl --request GET \
     --get "http://sanbuk-internship-main/api/v1/user/profile" \
     --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
+    --header "Accept: application/json" \
+    --header "Authorization: Bearer "</code></pre></div>
 
 
 <div class="javascript-example">
@@ -950,6 +1125,7 @@ fetch(url, {
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
+    "Authorization": "Bearer ",
 };
 
 fetch(url, {
@@ -959,7 +1135,7 @@ fetch(url, {
 
 </span>
 
-<span id="example-responses-GETapi-v1-user-profile">
+        <span id="example-responses-GETapi-v1-user-profile">
             <blockquote>
             <p>Example response (401):</p>
         </blockquote>
@@ -1027,29 +1203,151 @@ access-control-allow-origin: *
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-               name="Accept"                data-endpoint="GETapi-v1-user-profile"
+    <div style="padding-left: 28px; clear: unset;">
+        <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+        &nbsp;
+        &nbsp;
+        <input type="text" style="display: none"
+               name="Accept" data-endpoint="GETapi-v1-user-profile"
                value="application/json"
                data-component="header">
-    <br>
-<p>Example: <code>application/json</code></p>
+        <br>
+        <p>Example: <code>application/json</code></p>
+    </div>
+    <div style="padding-left: 28px; clear: unset;">
+        <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+        &nbsp;
+        &nbsp;
+        <input type="text" style="display: none"
+               name="Authorization" class="auth-value" data-endpoint="GETapi-v1-user-profile"
+               value="Bearer "
+               data-component="header">
+        <br>
+        <p>Example: <code>Bearer</code></p>
+    </div>
+</form>
+
+        <h2 id="user-DELETEapi-v1-user-profile">Delete profile</h2>
+
+        <p>
+            <small class="badge badge-darkred">requires authentication</small>
+        </p>
+
+
+        <span id="example-requests-DELETEapi-v1-user-profile">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request DELETE \
+    "http://sanbuk-internship-main/api/v1/user/profile" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --header "Authorization: Bearer "</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://sanbuk-internship-main/api/v1/user/profile"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "Authorization": "Bearer ",
+};
+
+fetch(url, {
+    method: "DELETE",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+        <span id="example-responses-DELETEapi-v1-user-profile">
+</span>
+        <span id="execution-results-DELETEapi-v1-user-profile" hidden>
+    <blockquote>Received response<span
+            id="execution-response-status-DELETEapi-v1-user-profile"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-DELETEapi-v1-user-profile" style="max-height: 400px;"></code></pre>
+</span>
+        <span id="execution-error-DELETEapi-v1-user-profile" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-DELETEapi-v1-user-profile"></code></pre>
+</span>
+        <form id="form-DELETEapi-v1-user-profile" data-method="DELETE"
+              data-path="api/v1/user/profile"
+              data-authed="1"
+              data-hasfiles="0"
+              data-isarraybody="0"
+              autocomplete="off"
+              onsubmit="event.preventDefault(); executeTryOut('DELETEapi-v1-user-profile', this);">
+            <h3>
+                Request&nbsp;&nbsp;&nbsp;
+                <button type="button"
+                        style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                        id="btn-tryout-DELETEapi-v1-user-profile"
+                        onclick="tryItOut('DELETEapi-v1-user-profile');">Try it out ⚡
+                </button>
+                <button type="button"
+                        style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                        id="btn-canceltryout-DELETEapi-v1-user-profile"
+                        onclick="cancelTryOut('DELETEapi-v1-user-profile');" hidden>Cancel 🛑
+                </button>&nbsp;&nbsp;
+                <button type="submit"
+                        style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                        id="btn-executetryout-DELETEapi-v1-user-profile" hidden>Send Request 💥
+                </button>
+            </h3>
+            <p>
+                <small class="badge badge-red">DELETE</small>
+                <b><code>api/v1/user/profile</code></b>
+            </p>
+            <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+            <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+                &nbsp;
+                &nbsp;
+                <input type="text" style="display: none"
+                       name="Content-Type" data-endpoint="DELETEapi-v1-user-profile"
+                       value="application/json"
+                       data-component="header">
+                <br>
+                <p>Example: <code>application/json</code></p>
             </div>
-                        </form>
-
-
+            <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+                &nbsp;
+                &nbsp;
+                <input type="text" style="display: none"
+                       name="Accept" data-endpoint="DELETEapi-v1-user-profile"
+                       value="application/json"
+                       data-component="header">
+                <br>
+                <p>Example: <code>application/json</code></p>
+            </div>
+            <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+                &nbsp;
+                &nbsp;
+                <input type="text" style="display: none"
+                       name="Authorization" class="auth-value" data-endpoint="DELETEapi-v1-user-profile"
+                       value="Bearer "
+                       data-component="header">
+                <br>
+                <p>Example: <code>Bearer</code></p>
+            </div>
+        </form>
 
 
     </div>
     <div class="dark-box">
-                    <div class="lang-selector">
-                                                        <button type="button" class="lang-button" data-language-name="bash">bash</button>
-                                                        <button type="button" class="lang-button" data-language-name="javascript">javascript</button>
-                            </div>
-            </div>
+        <div class="lang-selector">
+            <button type="button" class="lang-button" data-language-name="bash">bash</button>
+            <button type="button" class="lang-button" data-language-name="javascript">javascript</button>
+        </div>
+    </div>
 </div>
 </body>
 </html>

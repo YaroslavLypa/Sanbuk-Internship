@@ -8,7 +8,13 @@ class UserService
 {
     public function createRecord(array $data)
     {
-        return User::create($data);
+        $user = User::create($data);
+//        if ($user) {
+//            UserCreated::dispatch($user);
+//        }
+
+        return $user->createToken(mt_rand(0, 100))->plainTextToken;
+//        return User::create($data);
     }
 
     public function phoneVerification($status, $phone)
