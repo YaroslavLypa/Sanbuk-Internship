@@ -1,7 +1,10 @@
 <?php
 
 use App\Http\Controllers\V1\BannerController;
+use App\Http\Controllers\V1\Booking\WebhookController;
+use App\Http\Controllers\V1\BookingController;
 use App\Http\Controllers\V1\ExperienceController;
+use App\Http\Controllers\V1\ProductController;
 use App\Http\Controllers\V1\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -21,6 +24,21 @@ Route::prefix('/experiences')->group(function () {
 });
 
 Route::get('/banner/{bannerType}', [BannerController::class, 'getBannerByType']);
+
+Route::prefix('/bookings')->group(function () {
+    Route::middleware(['auth:sanctum'])->group(function () {
+        Route::post('/create', [BookingController::class, 'store']);
+    });
+
+    Route::prefix('/webhooks')->group(function () {
+        Route::post('/charge/succeeded', [WebhookController::class, 'chargeSucceeded']);
+    });
+});
+
+Route::prefix('/products')->group(function () {
+    Route::get('/getProducts', [ProductController::class, 'getProducts']);
+    Route::post('/buyProduct', [ProductController::class, 'buyProduct'])->middleware('auth:sanctum');
+});
 
 //Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 //    return $request->user();

@@ -16,6 +16,7 @@ use Illuminate\Notifications\DatabaseNotification;
 use Illuminate\Notifications\DatabaseNotificationCollection;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Carbon;
+use Laravel\Cashier\Billable;
 use Laravel\Sanctum\HasApiTokens;
 use Laravel\Sanctum\PersonalAccessToken;
 use Spatie\Image\Manipulations;
@@ -61,7 +62,7 @@ use Spatie\MediaLibrary\MediaCollections\Models\Media;
  */
 class User extends Authenticatable implements HasMedia
 {
-    use HasApiTokens, HasFactory, Notifiable, HasAvatarUrl, InteractsWithMedia, SoftDeletes;
+    use HasApiTokens, HasFactory, Notifiable, HasAvatarUrl, InteractsWithMedia, SoftDeletes, Billable;
 
     const TYPE_USER = 0;
     const TYPE_VENDOR = 1;
@@ -118,6 +119,11 @@ class User extends Authenticatable implements HasMedia
     protected $dispatchesEvents = [
         'created' => UserCreated::class,
     ];
+
+    public function bookings()
+    {
+        return $this->hasMany(Booking::class);
+    }
 
     public function registerMediaConversions(Media $media = null): void
     {

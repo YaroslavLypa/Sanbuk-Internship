@@ -2,7 +2,10 @@
 
 namespace App\Providers;
 
+use App\Events\BookingCreated;
 use App\Events\UserCreated;
+use App\Listeners\ChargeBooking;
+use App\Listeners\CreateStripeCustomer;
 use App\Listeners\SendUserCreatedEmailNotification;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
 
@@ -16,6 +19,10 @@ class EventServiceProvider extends ServiceProvider
     protected $listen = [
         UserCreated::class => [
             SendUserCreatedEmailNotification::class,
+            CreateStripeCustomer::class,
+        ],
+        BookingCreated::class => [
+            ChargeBooking::class,
         ],
     ];
 

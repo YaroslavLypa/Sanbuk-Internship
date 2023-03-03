@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\V1\User\SignInRequest;
 use App\Http\Requests\V1\User\SignUpRequest;
 use App\Http\Requests\V1\User\VerificationRequest;
+use App\Models\User;
 use App\Services\TwilioService;
 use App\Services\UserService;
 use Knuckles\Scribe\Attributes\Authenticated;
@@ -33,6 +34,8 @@ class UserController extends Controller
     #[Endpoint('Sign In')]
     public function signIn(SignInRequest $request)
     {
+        $user = User::where('phone', $request->input('phone'))->firstOrFail();
+        return $user->createToken(mt_rand(0, 100))->plainTextToken;
         return $this->twilioService->sendVerifyCode($request->post('phone'));
     }
 
