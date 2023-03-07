@@ -160,6 +160,17 @@
                         <a href="#user-DELETEapi-v1-user-profile">Delete profile</a>
                     </li>
                 </ul>
+                <li class="tocify-item level-2" data-unique="user-subscription">
+                    <a href="#user-subscription">Subscription</a>
+                </li>
+                <ul id="tocify-subheader-user-subscription" class="tocify-subheader">
+                    <li class="tocify-item level-3" data-unique="user-POSTapi-v1-user-subscription-create">
+                        <a href="#user-POSTapi-v1-user-subscription-create">Create Subscription</a>
+                    </li>
+                    <li class="tocify-item level-3" data-unique="user-PATCHapi-v1-user-subscription-update">
+                        <a href="#user-PATCHapi-v1-user-subscription-update">Update Subscription</a>
+                    </li>
+                </ul>
             </ul>
         </ul>
     </div>
@@ -171,7 +182,7 @@
     </ul>
 
     <ul class="toc-footer" id="last-updated">
-        <li>Last updated: March 3, 2023</li>
+        <li>Last updated: March 7, 2023</li>
     </ul>
 </div>
 
@@ -208,14 +219,14 @@
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://sanbuk-internship-main/api/v1/banner/12" \
+    --get "http://sanbuk-internship-main/api/v1/banner/14" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://sanbuk-internship-main/api/v1/banner/12"
+    "http://sanbuk-internship-main/api/v1/banner/14"
 );
 
 const headers = {
@@ -321,10 +332,10 @@ access-control-allow-origin: *
                 &nbsp;
                 <input type="number" style="display: none"
                        name="bannerType" data-endpoint="GETapi-v1-banner--bannerType-"
-                       value="12"
+                       value="14"
                        data-component="url">
                 <br>
-                <p>Example: <code>12</code></p>
+                <p>Example: <code>14</code></p>
             </div>
         </form>
 
@@ -349,7 +360,7 @@ access-control-allow-origin: *
     --header "Accept: application/json" \
     --header "Authorization: Bearer " \
     --data "{
-    \"package_id\": 11
+    \"package_id\": 10
 }"
 </code></pre></div>
 
@@ -366,7 +377,7 @@ const headers = {
 };
 
 let body = {
-    "package_id": 11
+    "package_id": 10
 };
 
 fetch(url, {
@@ -459,10 +470,10 @@ fetch(url, {
                 &nbsp;
                 <input type="number" style="display: none"
                        name="package_id" data-endpoint="POSTapi-v1-bookings-create"
-                       value="11"
+                       value="10"
                        data-component="body">
                 <br>
-                <p>Example: <code>11</code></p>
+                <p>Example: <code>10</code></p>
             </div>
         </form>
 
@@ -1011,6 +1022,27 @@ access-control-allow-origin: *
     &quot;status&quot;: 200,
     &quot;data&quot;: [
         {
+            &quot;id&quot;: &quot;prod_NTzGCKDHYnl10Y&quot;,
+            &quot;status&quot;: true,
+            &quot;name&quot;: &quot;Sanbuk premium package&quot;,
+            &quot;price&quot;: &quot;price_1Mj1I8H126EHjJvtBz46cgHb&quot;,
+            &quot;description&quot;: null
+        },
+        {
+            &quot;id&quot;: &quot;prod_NTzFMv0cscn42J&quot;,
+            &quot;status&quot;: true,
+            &quot;name&quot;: &quot;Sanbuk basic package&quot;,
+            &quot;price&quot;: &quot;price_1Mj1H3H126EHjJvtCF45s8W4&quot;,
+            &quot;description&quot;: null
+        },
+        {
+            &quot;id&quot;: &quot;prod_NSGe2iogiL8MyC&quot;,
+            &quot;status&quot;: true,
+            &quot;name&quot;: &quot;Moon&quot;,
+            &quot;price&quot;: &quot;price_1MhM7MH126EHjJvthvsq6spR&quot;,
+            &quot;description&quot;: &quot;test&quot;
+        },
+        {
             &quot;id&quot;: &quot;prod_NSFXwkqBzMbOA3&quot;,
             &quot;status&quot;: true,
             &quot;name&quot;: &quot;Package3&quot;,
@@ -1117,7 +1149,7 @@ access-control-allow-origin: *
     --header "Accept: application/json" \
     --header "Authorization: Bearer " \
     --data "{
-    \"product_id\": \"dignissimos\"
+    \"product_id\": \"voluptatum\"
 }"
 </code></pre></div>
 
@@ -1134,7 +1166,7 @@ const headers = {
 };
 
 let body = {
-    "product_id": "dignissimos"
+    "product_id": "voluptatum"
 };
 
 fetch(url, {
@@ -1227,10 +1259,10 @@ fetch(url, {
                 &nbsp;
                 <input type="text" style="display: none"
                        name="product_id" data-endpoint="POSTapi-v1-products-buyProduct"
-                       value="dignissimos"
+                       value="voluptatum"
                        data-component="body">
                 <br>
-                <p>Example: <code>dignissimos</code></p>
+                <p>Example: <code>voluptatum</code></p>
             </div>
         </form>
 
@@ -1254,10 +1286,10 @@ fetch(url, {
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"first_name\": \"aut\",
-    \"last_name\": \"velit\",
-    \"phone\": \"omnis\",
-    \"email\": \"creola.crona@example.com\"
+    \"first_name\": \"maiores\",
+    \"last_name\": \"natus\",
+    \"phone\": \"voluptatum\",
+    \"email\": \"rau.myrna@example.com\"
 }"
 </code></pre></div>
 
@@ -1273,10 +1305,10 @@ const headers = {
 };
 
 let body = {
-    "first_name": "aut",
-    "last_name": "velit",
-    "phone": "omnis",
-    "email": "creola.crona@example.com"
+    "first_name": "maiores",
+    "last_name": "natus",
+    "phone": "voluptatum",
+    "email": "rau.myrna@example.com"
 };
 
 fetch(url, {
@@ -1307,27 +1339,27 @@ fetch(url, {
               data-isarraybody="0"
               autocomplete="off"
               onsubmit="event.preventDefault(); executeTryOut('POSTapi-v1-auth-sign-up', this);">
-    <h3>
-        Request&nbsp;&nbsp;&nbsp;
-                    <button type="button"
-                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-POSTapi-v1-auth-sign-up"
-                    onclick="tryItOut('POSTapi-v1-auth-sign-up');">Try it out ⚡
-            </button>
-            <button type="button"
-                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-POSTapi-v1-auth-sign-up"
+            <h3>
+                Request&nbsp;&nbsp;&nbsp;
+                <button type="button"
+                        style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                        id="btn-tryout-POSTapi-v1-auth-sign-up"
+                        onclick="tryItOut('POSTapi-v1-auth-sign-up');">Try it out ⚡
+                </button>
+                <button type="button"
+                        style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                        id="btn-canceltryout-POSTapi-v1-auth-sign-up"
                     onclick="cancelTryOut('POSTapi-v1-auth-sign-up');" hidden>Cancel 🛑
-            </button>&nbsp;&nbsp;
-            <button type="submit"
-                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-POSTapi-v1-auth-sign-up" hidden>Send Request 💥
-            </button>
+                </button>&nbsp;&nbsp;
+                <button type="submit"
+                        style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                        id="btn-executetryout-POSTapi-v1-auth-sign-up" hidden>Send Request 💥
+                </button>
             </h3>
             <p>
-            <small class="badge badge-black">POST</small>
-            <b><code>api/v1/auth/sign-up</code></b>
-        </p>
+                <small class="badge badge-black">POST</small>
+                <b><code>api/v1/auth/sign-up</code></b>
+            </p>
             <h4 class="fancy-heading-panel"><b>Headers</b></h4>
             <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
@@ -1358,10 +1390,10 @@ fetch(url, {
                 &nbsp;
                 <input type="text" style="display: none"
                        name="first_name" data-endpoint="POSTapi-v1-auth-sign-up"
-                       value="aut"
+                       value="maiores"
                        data-component="body">
                 <br>
-                <p>Example: <code>aut</code></p>
+                <p>Example: <code>maiores</code></p>
             </div>
             <div style=" padding-left: 28px;  clear: unset;">
                 <b style="line-height: 2;"><code>last_name</code></b>&nbsp;&nbsp;
@@ -1369,10 +1401,10 @@ fetch(url, {
                 &nbsp;
                 <input type="text" style="display: none"
                        name="last_name" data-endpoint="POSTapi-v1-auth-sign-up"
-                       value="velit"
+                       value="natus"
                        data-component="body">
                 <br>
-                <p>Example: <code>velit</code></p>
+                <p>Example: <code>natus</code></p>
             </div>
             <div style=" padding-left: 28px;  clear: unset;">
                 <b style="line-height: 2;"><code>phone</code></b>&nbsp;&nbsp;
@@ -1380,10 +1412,10 @@ fetch(url, {
                 &nbsp;
                 <input type="text" style="display: none"
                        name="phone" data-endpoint="POSTapi-v1-auth-sign-up"
-                       value="omnis"
+                       value="voluptatum"
                        data-component="body">
                 <br>
-                <p>Example: <code>omnis</code></p>
+                <p>Example: <code>voluptatum</code></p>
             </div>
             <div style=" padding-left: 28px;  clear: unset;">
                 <b style="line-height: 2;"><code>email</code></b>&nbsp;&nbsp;
@@ -1391,10 +1423,10 @@ fetch(url, {
                 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                        name="email" data-endpoint="POSTapi-v1-auth-sign-up"
-                       value="creola.crona@example.com"
+                       value="rau.myrna@example.com"
                        data-component="body">
                 <br>
-                <p>Must be a valid email address. Example: <code>creola.crona@example.com</code></p>
+                <p>Must be a valid email address. Example: <code>rau.myrna@example.com</code></p>
             </div>
         </form>
 
@@ -1414,7 +1446,7 @@ fetch(url, {
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"phone\": \"magnam\"
+    \"phone\": \"doloremque\"
 }"
 </code></pre></div>
 
@@ -1430,7 +1462,7 @@ const headers = {
 };
 
 let body = {
-    "phone": "magnam"
+    "phone": "doloremque"
 };
 
 fetch(url, {
@@ -1461,27 +1493,27 @@ fetch(url, {
               data-isarraybody="0"
               autocomplete="off"
               onsubmit="event.preventDefault(); executeTryOut('POSTapi-v1-auth-sign-in', this);">
-    <h3>
-        Request&nbsp;&nbsp;&nbsp;
-                    <button type="button"
-                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-POSTapi-v1-auth-sign-in"
-                    onclick="tryItOut('POSTapi-v1-auth-sign-in');">Try it out ⚡
-            </button>
-            <button type="button"
-                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-POSTapi-v1-auth-sign-in"
+            <h3>
+                Request&nbsp;&nbsp;&nbsp;
+                <button type="button"
+                        style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                        id="btn-tryout-POSTapi-v1-auth-sign-in"
+                        onclick="tryItOut('POSTapi-v1-auth-sign-in');">Try it out ⚡
+                </button>
+                <button type="button"
+                        style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                        id="btn-canceltryout-POSTapi-v1-auth-sign-in"
                     onclick="cancelTryOut('POSTapi-v1-auth-sign-in');" hidden>Cancel 🛑
-            </button>&nbsp;&nbsp;
-            <button type="submit"
-                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-POSTapi-v1-auth-sign-in" hidden>Send Request 💥
-            </button>
+                </button>&nbsp;&nbsp;
+                <button type="submit"
+                        style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                        id="btn-executetryout-POSTapi-v1-auth-sign-in" hidden>Send Request 💥
+                </button>
             </h3>
             <p>
-            <small class="badge badge-black">POST</small>
-            <b><code>api/v1/auth/sign-in</code></b>
-        </p>
+                <small class="badge badge-black">POST</small>
+                <b><code>api/v1/auth/sign-in</code></b>
+            </p>
             <h4 class="fancy-heading-panel"><b>Headers</b></h4>
             <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
@@ -1512,10 +1544,10 @@ fetch(url, {
                 &nbsp;
                 <input type="text" style="display: none"
                        name="phone" data-endpoint="POSTapi-v1-auth-sign-in"
-                       value="magnam"
+                       value="doloremque"
                        data-component="body">
                 <br>
-                <p>Example: <code>magnam</code></p>
+                <p>Example: <code>doloremque</code></p>
             </div>
         </form>
 
@@ -1535,8 +1567,8 @@ fetch(url, {
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"phone\": \"et\",
-    \"code\": \"ut\"
+    \"phone\": \"iusto\",
+    \"code\": \"est\"
 }"
 </code></pre></div>
 
@@ -1552,8 +1584,8 @@ const headers = {
 };
 
 let body = {
-    "phone": "et",
-    "code": "ut"
+    "phone": "iusto",
+    "code": "est"
 };
 
 fetch(url, {
@@ -1584,27 +1616,27 @@ fetch(url, {
               data-isarraybody="0"
               autocomplete="off"
               onsubmit="event.preventDefault(); executeTryOut('POSTapi-v1-auth-verification', this);">
-    <h3>
-        Request&nbsp;&nbsp;&nbsp;
-                    <button type="button"
-                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-POSTapi-v1-auth-verification"
-                    onclick="tryItOut('POSTapi-v1-auth-verification');">Try it out ⚡
-            </button>
-            <button type="button"
-                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-POSTapi-v1-auth-verification"
+            <h3>
+                Request&nbsp;&nbsp;&nbsp;
+                <button type="button"
+                        style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                        id="btn-tryout-POSTapi-v1-auth-verification"
+                        onclick="tryItOut('POSTapi-v1-auth-verification');">Try it out ⚡
+                </button>
+                <button type="button"
+                        style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                        id="btn-canceltryout-POSTapi-v1-auth-verification"
                     onclick="cancelTryOut('POSTapi-v1-auth-verification');" hidden>Cancel 🛑
-            </button>&nbsp;&nbsp;
-            <button type="submit"
-                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-POSTapi-v1-auth-verification" hidden>Send Request 💥
-            </button>
+                </button>&nbsp;&nbsp;
+                <button type="submit"
+                        style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                        id="btn-executetryout-POSTapi-v1-auth-verification" hidden>Send Request 💥
+                </button>
             </h3>
             <p>
-            <small class="badge badge-black">POST</small>
-            <b><code>api/v1/auth/verification</code></b>
-        </p>
+                <small class="badge badge-black">POST</small>
+                <b><code>api/v1/auth/verification</code></b>
+            </p>
             <h4 class="fancy-heading-panel"><b>Headers</b></h4>
             <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
@@ -1635,10 +1667,10 @@ fetch(url, {
                 &nbsp;
                 <input type="text" style="display: none"
                        name="phone" data-endpoint="POSTapi-v1-auth-verification"
-                       value="et"
+                       value="iusto"
                        data-component="body">
                 <br>
-                <p>Example: <code>et</code></p>
+                <p>Example: <code>iusto</code></p>
             </div>
             <div style=" padding-left: 28px;  clear: unset;">
                 <b style="line-height: 2;"><code>code</code></b>&nbsp;&nbsp;
@@ -1646,10 +1678,10 @@ fetch(url, {
                 &nbsp;
                 <input type="text" style="display: none"
                        name="code" data-endpoint="POSTapi-v1-auth-verification"
-                       value="ut"
+                       value="est"
                        data-component="body">
                 <br>
-                <p>Example: <code>ut</code></p>
+                <p>Example: <code>est</code></p>
             </div>
         </form>
 
@@ -1742,23 +1774,23 @@ access-control-allow-origin: *
                     style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
                     id="btn-executetryout-GETapi-v1-user-profile" hidden>Send Request 💥
             </button>
-            </h3>
-            <p>
-            <small class="badge badge-green">GET</small>
-            <b><code>api/v1/user/profile</code></b>
-        </p>
-                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
-                                <div style="padding-left: 28px; clear: unset;">
-                                    <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
-                                    &nbsp;
-                                    &nbsp;
-                                    <input type="text" style="display: none"
-                                           name="Content-Type" data-endpoint="GETapi-v1-user-profile"
-                                           value="application/json"
-                                           data-component="header">
-                                    <br>
-                                    <p>Example: <code>application/json</code></p>
-                                </div>
+    </h3>
+    <p>
+        <small class="badge badge-green">GET</small>
+        <b><code>api/v1/user/profile</code></b>
+    </p>
+    <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+    <div style="padding-left: 28px; clear: unset;">
+        <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+        &nbsp;
+        &nbsp;
+        <input type="text" style="display: none"
+               name="Content-Type" data-endpoint="GETapi-v1-user-profile"
+               value="application/json"
+               data-component="header">
+        <br>
+        <p>Example: <code>application/json</code></p>
+    </div>
     <div style="padding-left: 28px; clear: unset;">
         <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
         &nbsp;
@@ -1893,6 +1925,277 @@ fetch(url, {
                        data-component="header">
                 <br>
                 <p>Example: <code>Bearer</code></p>
+            </div>
+        </form>
+
+        <h2 id="user-subscription">Subscription</h2>
+        <h2 id="user-POSTapi-v1-user-subscription-create">Create Subscription</h2>
+
+        <p>
+            <small class="badge badge-darkred">requires authentication</small>
+        </p>
+
+
+        <span id="example-requests-POSTapi-v1-user-subscription-create">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "http://sanbuk-internship-main/api/v1/user/subscription/create" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --header "Authorization: Bearer " \
+    --data "{
+    \"stripe_price_id\": \"blanditiis\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://sanbuk-internship-main/api/v1/user/subscription/create"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "Authorization": "Bearer ",
+};
+
+let body = {
+    "stripe_price_id": "blanditiis"
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+        <span id="example-responses-POSTapi-v1-user-subscription-create">
+</span>
+        <span id="execution-results-POSTapi-v1-user-subscription-create" hidden>
+    <blockquote>Received response<span
+            id="execution-response-status-POSTapi-v1-user-subscription-create"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-v1-user-subscription-create"
+                            style="max-height: 400px;"></code></pre>
+</span>
+        <span id="execution-error-POSTapi-v1-user-subscription-create" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-v1-user-subscription-create"></code></pre>
+</span>
+        <form id="form-POSTapi-v1-user-subscription-create" data-method="POST"
+              data-path="api/v1/user/subscription/create"
+              data-authed="1"
+              data-hasfiles="0"
+              data-isarraybody="0"
+              autocomplete="off"
+              onsubmit="event.preventDefault(); executeTryOut('POSTapi-v1-user-subscription-create', this);">
+            <h3>
+                Request&nbsp;&nbsp;&nbsp;
+                <button type="button"
+                        style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                        id="btn-tryout-POSTapi-v1-user-subscription-create"
+                        onclick="tryItOut('POSTapi-v1-user-subscription-create');">Try it out ⚡
+                </button>
+                <button type="button"
+                        style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                        id="btn-canceltryout-POSTapi-v1-user-subscription-create"
+                        onclick="cancelTryOut('POSTapi-v1-user-subscription-create');" hidden>Cancel 🛑
+                </button>&nbsp;&nbsp;
+                <button type="submit"
+                        style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                        id="btn-executetryout-POSTapi-v1-user-subscription-create" hidden>Send Request 💥
+                </button>
+            </h3>
+            <p>
+                <small class="badge badge-black">POST</small>
+                <b><code>api/v1/user/subscription/create</code></b>
+            </p>
+            <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+            <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+                &nbsp;
+                &nbsp;
+                <input type="text" style="display: none"
+                       name="Content-Type" data-endpoint="POSTapi-v1-user-subscription-create"
+                       value="application/json"
+                       data-component="header">
+                <br>
+                <p>Example: <code>application/json</code></p>
+            </div>
+            <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+                &nbsp;
+                &nbsp;
+                <input type="text" style="display: none"
+                       name="Accept" data-endpoint="POSTapi-v1-user-subscription-create"
+                       value="application/json"
+                       data-component="header">
+                <br>
+                <p>Example: <code>application/json</code></p>
+            </div>
+            <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+                &nbsp;
+                &nbsp;
+                <input type="text" style="display: none"
+                       name="Authorization" class="auth-value" data-endpoint="POSTapi-v1-user-subscription-create"
+                       value="Bearer "
+                       data-component="header">
+                <br>
+                <p>Example: <code>Bearer</code></p>
+            </div>
+            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+            <div style=" padding-left: 28px;  clear: unset;">
+                <b style="line-height: 2;"><code>stripe_price_id</code></b>&nbsp;&nbsp;
+                <small>string</small>&nbsp;
+                &nbsp;
+                <input type="text" style="display: none"
+                       name="stripe_price_id" data-endpoint="POSTapi-v1-user-subscription-create"
+                       value="blanditiis"
+                       data-component="body">
+                <br>
+                <p>Example: <code>blanditiis</code></p>
+            </div>
+        </form>
+
+        <h2 id="user-PATCHapi-v1-user-subscription-update">Update Subscription</h2>
+
+        <p>
+            <small class="badge badge-darkred">requires authentication</small>
+        </p>
+
+
+        <span id="example-requests-PATCHapi-v1-user-subscription-update">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request PATCH \
+    "http://sanbuk-internship-main/api/v1/user/subscription/update" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --header "Authorization: Bearer " \
+    --data "{
+    \"stripe_price_id\": \"libero\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://sanbuk-internship-main/api/v1/user/subscription/update"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "Authorization": "Bearer ",
+};
+
+let body = {
+    "stripe_price_id": "libero"
+};
+
+fetch(url, {
+    method: "PATCH",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+        <span id="example-responses-PATCHapi-v1-user-subscription-update">
+</span>
+        <span id="execution-results-PATCHapi-v1-user-subscription-update" hidden>
+    <blockquote>Received response<span
+            id="execution-response-status-PATCHapi-v1-user-subscription-update"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-PATCHapi-v1-user-subscription-update"
+                            style="max-height: 400px;"></code></pre>
+</span>
+        <span id="execution-error-PATCHapi-v1-user-subscription-update" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-PATCHapi-v1-user-subscription-update"></code></pre>
+</span>
+        <form id="form-PATCHapi-v1-user-subscription-update" data-method="PATCH"
+              data-path="api/v1/user/subscription/update"
+              data-authed="1"
+              data-hasfiles="0"
+              data-isarraybody="0"
+              autocomplete="off"
+              onsubmit="event.preventDefault(); executeTryOut('PATCHapi-v1-user-subscription-update', this);">
+            <h3>
+                Request&nbsp;&nbsp;&nbsp;
+                <button type="button"
+                        style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                        id="btn-tryout-PATCHapi-v1-user-subscription-update"
+                        onclick="tryItOut('PATCHapi-v1-user-subscription-update');">Try it out ⚡
+                </button>
+                <button type="button"
+                        style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                        id="btn-canceltryout-PATCHapi-v1-user-subscription-update"
+                        onclick="cancelTryOut('PATCHapi-v1-user-subscription-update');" hidden>Cancel 🛑
+                </button>&nbsp;&nbsp;
+                <button type="submit"
+                        style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                        id="btn-executetryout-PATCHapi-v1-user-subscription-update" hidden>Send Request 💥
+                </button>
+            </h3>
+            <p>
+                <small class="badge badge-purple">PATCH</small>
+                <b><code>api/v1/user/subscription/update</code></b>
+            </p>
+            <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+            <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+                &nbsp;
+                &nbsp;
+                <input type="text" style="display: none"
+                       name="Content-Type" data-endpoint="PATCHapi-v1-user-subscription-update"
+                       value="application/json"
+                       data-component="header">
+                <br>
+                <p>Example: <code>application/json</code></p>
+            </div>
+            <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+                &nbsp;
+                &nbsp;
+                <input type="text" style="display: none"
+                       name="Accept" data-endpoint="PATCHapi-v1-user-subscription-update"
+                       value="application/json"
+                       data-component="header">
+                <br>
+                <p>Example: <code>application/json</code></p>
+            </div>
+            <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+                &nbsp;
+                &nbsp;
+                <input type="text" style="display: none"
+                       name="Authorization" class="auth-value" data-endpoint="PATCHapi-v1-user-subscription-update"
+                       value="Bearer "
+                       data-component="header">
+                <br>
+                <p>Example: <code>Bearer</code></p>
+            </div>
+            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+            <div style=" padding-left: 28px;  clear: unset;">
+                <b style="line-height: 2;"><code>stripe_price_id</code></b>&nbsp;&nbsp;
+                <small>string</small>&nbsp;
+                &nbsp;
+                <input type="text" style="display: none"
+                       name="stripe_price_id" data-endpoint="PATCHapi-v1-user-subscription-update"
+                       value="libero"
+                       data-component="body">
+                <br>
+                <p>Example: <code>libero</code></p>
             </div>
         </form>
 

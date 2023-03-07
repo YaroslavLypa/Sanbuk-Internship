@@ -21,4 +21,6 @@ class CreateStripeCustomer implements ShouldQueue
     {
         $event->user->createOrGetStripeCustomer();
     }
+
+
 }

@@ -3,20 +3,21 @@
 namespace App\Services;
 
 use App\Http\Requests\Product\ProductRequest;
+use Stripe\Exception\ApiErrorException;
 use Stripe\StripeClient;
 
 class ProductService
 {
-    private StripeClient $stripeClient;
+    private StripeClient $stripe;
 
     public function __construct()
     {
-        $this->stripeClient = new StripeClient(config('stripe.stripe_secret'));
+        $this->stripe = new StripeClient(config('stripe.stripe_secret'));
     }
 
     public function getProducts(): array
     {
-        $products = $this->stripeClient->products->all();
+        $products = $this->stripe->products->all();
         $res = [];
         foreach ($products as $product) {
             if ($product->active === true) {
@@ -33,11 +34,14 @@ class ProductService
         return $res;
     }
 
+    /**
+     * @throws ApiErrorException
+     */
     public function buyProduct(ProductRequest $request): bool
     {
-        $price = $this->stripeClient->prices->all(['product' => $request->product_id])->data[0]->unit_amount;
+        $price = $this->stripe->prices->all(['product' => $request->product_id])->data[0]->unit_amount;
 
-        $this->stripeClient->charges->create(
+        $this->stripe->charges->create(
             [
                 'amount' => $price,
                 'currency' => 'usd',
