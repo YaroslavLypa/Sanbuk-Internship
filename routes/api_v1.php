@@ -7,6 +7,8 @@ use App\Http\Controllers\V1\ExperienceController;
 use App\Http\Controllers\V1\ProductController;
 use App\Http\Controllers\V1\SubscriptionController;
 use App\Http\Controllers\V1\UserController;
+use App\Http\Resources\V1\UserCollection;
+use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
 Route::prefix('/auth')->group(function () {
@@ -37,13 +39,17 @@ Route::prefix('/bookings')->group(function () {
     });
 
     Route::prefix('/webhooks')->group(function () {
-        Route::post('/charge/succeeded', [WebhookController::class, 'chargeSucceeded']);
+        Route::any('/charge/succeeded', [WebhookController::class, 'chargeSucceeded']);
     });
 });
 
 Route::prefix('/products')->group(function () {
     Route::get('/getProducts', [ProductController::class, 'getProducts']);
     Route::post('/buyProduct', [ProductController::class, 'buyProduct'])->middleware('auth:sanctum');
+});
+
+Route::get('/users', function () {
+    return new UserCollection(User::all());
 });
 
 //Route::middleware('auth:sanctum')->get('/user', function (Request $request) {

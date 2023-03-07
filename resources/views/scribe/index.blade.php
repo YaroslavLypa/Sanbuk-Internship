@@ -101,9 +101,12 @@
                 <a href="#endpoints">Endpoints</a>
             </li>
             <ul id="tocify-subheader-endpoints" class="tocify-subheader">
-                <li class="tocify-item level-2" data-unique="endpoints-POSTapi-v1-bookings-webhooks-charge-succeeded">
-                    <a href="#endpoints-POSTapi-v1-bookings-webhooks-charge-succeeded">POST
+                <li class="tocify-item level-2" data-unique="endpoints-GETapi-v1-bookings-webhooks-charge-succeeded">
+                    <a href="#endpoints-GETapi-v1-bookings-webhooks-charge-succeeded">GET
                         api/v1/bookings/webhooks/charge/succeeded</a>
+                </li>
+                <li class="tocify-item level-2" data-unique="endpoints-GETapi-v1-users">
+                    <a href="#endpoints-GETapi-v1-users">GET api/v1/users</a>
                 </li>
             </ul>
         </ul>
@@ -360,7 +363,7 @@ access-control-allow-origin: *
     --header "Accept: application/json" \
     --header "Authorization: Bearer " \
     --data "{
-    \"package_id\": 10
+    \"package_id\": 14
 }"
 </code></pre></div>
 
@@ -377,7 +380,7 @@ const headers = {
 };
 
 let body = {
-    "package_id": 10
+    "package_id": 14
 };
 
 fetch(url, {
@@ -470,30 +473,30 @@ fetch(url, {
                 &nbsp;
                 <input type="number" style="display: none"
                        name="package_id" data-endpoint="POSTapi-v1-bookings-create"
-                       value="10"
+                       value="14"
                        data-component="body">
                 <br>
-                <p>Example: <code>10</code></p>
+                <p>Example: <code>14</code></p>
             </div>
         </form>
 
         <h1 id="endpoints">Endpoints</h1>
 
 
-        <h2 id="endpoints-POSTapi-v1-bookings-webhooks-charge-succeeded">POST
+        <h2 id="endpoints-GETapi-v1-bookings-webhooks-charge-succeeded">GET
             api/v1/bookings/webhooks/charge/succeeded</h2>
 
         <p>
         </p>
 
 
-        <span id="example-requests-POSTapi-v1-bookings-webhooks-charge-succeeded">
+        <span id="example-requests-GETapi-v1-bookings-webhooks-charge-succeeded">
 <blockquote>Example request:</blockquote>
 
 
 <div class="bash-example">
-    <pre><code class="language-bash">curl --request POST \
-    "http://sanbuk-internship-main/api/v1/bookings/webhooks/charge/succeeded" \
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://sanbuk-internship-main/api/v1/bookings/webhooks/charge/succeeded" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
@@ -509,51 +512,572 @@ const headers = {
 };
 
 fetch(url, {
-    method: "POST",
+    method: "GET",
     headers,
 }).then(response =&gt; response.json());</code></pre></div>
 
 </span>
 
-        <span id="example-responses-POSTapi-v1-bookings-webhooks-charge-succeeded">
-</span>
-        <span id="execution-results-POSTapi-v1-bookings-webhooks-charge-succeeded" hidden>
+        <span id="example-responses-GETapi-v1-bookings-webhooks-charge-succeeded">
+            <blockquote>
+            <p>Example response (500):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+accept: application/json
+x-ratelimit-limit: 60
+x-ratelimit-remaining: 57
+access-control-allow-origin: *
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;status&quot;: 500,
+    &quot;message&quot;: &quot;Undefined array key \&quot;data\&quot;&quot;,
+    &quot;exception&quot;: &quot;ErrorException&quot;,
+    &quot;file&quot;: &quot;W:\\domains\\sanbuk-internship-main\\app\\Http\\Controllers\\V1\\Booking\\WebhookController.php&quot;,
+    &quot;line&quot;: 15,
+    &quot;trace&quot;: [
+        {
+            &quot;file&quot;: &quot;W:\\domains\\sanbuk-internship-main\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\HandleExceptions.php&quot;,
+            &quot;line&quot;: 266,
+            &quot;function&quot;: &quot;handleError&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Foundation\\Bootstrap\\HandleExceptions&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;W:\\domains\\sanbuk-internship-main\\app\\Http\\Controllers\\V1\\Booking\\WebhookController.php&quot;,
+            &quot;line&quot;: 15,
+            &quot;function&quot;: &quot;Illuminate\\Foundation\\Bootstrap\\{closure}&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Foundation\\Bootstrap\\HandleExceptions&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;W:\\domains\\sanbuk-internship-main\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Controller.php&quot;,
+            &quot;line&quot;: 54,
+            &quot;function&quot;: &quot;chargeSucceeded&quot;,
+            &quot;class&quot;: &quot;App\\Http\\Controllers\\V1\\Booking\\WebhookController&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;W:\\domains\\sanbuk-internship-main\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\ControllerDispatcher.php&quot;,
+            &quot;line&quot;: 43,
+            &quot;function&quot;: &quot;callAction&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Routing\\Controller&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;W:\\domains\\sanbuk-internship-main\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php&quot;,
+            &quot;line&quot;: 260,
+            &quot;function&quot;: &quot;dispatch&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Routing\\ControllerDispatcher&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;W:\\domains\\sanbuk-internship-main\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php&quot;,
+            &quot;line&quot;: 205,
+            &quot;function&quot;: &quot;runController&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Routing\\Route&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;W:\\domains\\sanbuk-internship-main\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php&quot;,
+            &quot;line&quot;: 798,
+            &quot;function&quot;: &quot;run&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Routing\\Route&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;W:\\domains\\sanbuk-internship-main\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php&quot;,
+            &quot;line&quot;: 141,
+            &quot;function&quot;: &quot;Illuminate\\Routing\\{closure}&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Routing\\Router&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;W:\\domains\\sanbuk-internship-main\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\SubstituteBindings.php&quot;,
+            &quot;line&quot;: 50,
+            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;W:\\domains\\sanbuk-internship-main\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php&quot;,
+            &quot;line&quot;: 180,
+            &quot;function&quot;: &quot;handle&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Routing\\Middleware\\SubstituteBindings&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;W:\\domains\\sanbuk-internship-main\\app\\Http\\Middleware\\JsonMiddleware.php&quot;,
+            &quot;line&quot;: 37,
+            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;W:\\domains\\sanbuk-internship-main\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php&quot;,
+            &quot;line&quot;: 180,
+            &quot;function&quot;: &quot;handle&quot;,
+            &quot;class&quot;: &quot;App\\Http\\Middleware\\JsonMiddleware&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;W:\\domains\\sanbuk-internship-main\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\ThrottleRequests.php&quot;,
+            &quot;line&quot;: 126,
+            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;W:\\domains\\sanbuk-internship-main\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\ThrottleRequests.php&quot;,
+            &quot;line&quot;: 102,
+            &quot;function&quot;: &quot;handleRequest&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Routing\\Middleware\\ThrottleRequests&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;W:\\domains\\sanbuk-internship-main\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\ThrottleRequests.php&quot;,
+            &quot;line&quot;: 54,
+            &quot;function&quot;: &quot;handleRequestUsingNamedLimiter&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Routing\\Middleware\\ThrottleRequests&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;W:\\domains\\sanbuk-internship-main\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php&quot;,
+            &quot;line&quot;: 180,
+            &quot;function&quot;: &quot;handle&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Routing\\Middleware\\ThrottleRequests&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;W:\\domains\\sanbuk-internship-main\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php&quot;,
+            &quot;line&quot;: 116,
+            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;W:\\domains\\sanbuk-internship-main\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php&quot;,
+            &quot;line&quot;: 799,
+            &quot;function&quot;: &quot;then&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;W:\\domains\\sanbuk-internship-main\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php&quot;,
+            &quot;line&quot;: 776,
+            &quot;function&quot;: &quot;runRouteWithinStack&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Routing\\Router&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;W:\\domains\\sanbuk-internship-main\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php&quot;,
+            &quot;line&quot;: 740,
+            &quot;function&quot;: &quot;runRoute&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Routing\\Router&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;W:\\domains\\sanbuk-internship-main\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php&quot;,
+            &quot;line&quot;: 729,
+            &quot;function&quot;: &quot;dispatchToRoute&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Routing\\Router&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;W:\\domains\\sanbuk-internship-main\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php&quot;,
+            &quot;line&quot;: 190,
+            &quot;function&quot;: &quot;dispatch&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Routing\\Router&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;W:\\domains\\sanbuk-internship-main\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php&quot;,
+            &quot;line&quot;: 141,
+            &quot;function&quot;: &quot;Illuminate\\Foundation\\Http\\{closure}&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\Kernel&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;W:\\domains\\sanbuk-internship-main\\vendor\\livewire\\livewire\\src\\DisableBrowserCache.php&quot;,
+            &quot;line&quot;: 19,
+            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;W:\\domains\\sanbuk-internship-main\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php&quot;,
+            &quot;line&quot;: 180,
+            &quot;function&quot;: &quot;handle&quot;,
+            &quot;class&quot;: &quot;Livewire\\DisableBrowserCache&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;W:\\domains\\sanbuk-internship-main\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php&quot;,
+            &quot;line&quot;: 21,
+            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;W:\\domains\\sanbuk-internship-main\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull.php&quot;,
+            &quot;line&quot;: 31,
+            &quot;function&quot;: &quot;handle&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;W:\\domains\\sanbuk-internship-main\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php&quot;,
+            &quot;line&quot;: 180,
+            &quot;function&quot;: &quot;handle&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;W:\\domains\\sanbuk-internship-main\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php&quot;,
+            &quot;line&quot;: 21,
+            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;W:\\domains\\sanbuk-internship-main\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TrimStrings.php&quot;,
+            &quot;line&quot;: 40,
+            &quot;function&quot;: &quot;handle&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;W:\\domains\\sanbuk-internship-main\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php&quot;,
+            &quot;line&quot;: 180,
+            &quot;function&quot;: &quot;handle&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\Middleware\\TrimStrings&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;W:\\domains\\sanbuk-internship-main\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize.php&quot;,
+            &quot;line&quot;: 27,
+            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;W:\\domains\\sanbuk-internship-main\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php&quot;,
+            &quot;line&quot;: 180,
+            &quot;function&quot;: &quot;handle&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;W:\\domains\\sanbuk-internship-main\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance.php&quot;,
+            &quot;line&quot;: 86,
+            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;W:\\domains\\sanbuk-internship-main\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php&quot;,
+            &quot;line&quot;: 180,
+            &quot;function&quot;: &quot;handle&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;W:\\domains\\sanbuk-internship-main\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\HandleCors.php&quot;,
+            &quot;line&quot;: 62,
+            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;W:\\domains\\sanbuk-internship-main\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php&quot;,
+            &quot;line&quot;: 180,
+            &quot;function&quot;: &quot;handle&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Http\\Middleware\\HandleCors&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;W:\\domains\\sanbuk-internship-main\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\TrustProxies.php&quot;,
+            &quot;line&quot;: 39,
+            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;W:\\domains\\sanbuk-internship-main\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php&quot;,
+            &quot;line&quot;: 180,
+            &quot;function&quot;: &quot;handle&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Http\\Middleware\\TrustProxies&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;W:\\domains\\sanbuk-internship-main\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php&quot;,
+            &quot;line&quot;: 116,
+            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;W:\\domains\\sanbuk-internship-main\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php&quot;,
+            &quot;line&quot;: 165,
+            &quot;function&quot;: &quot;then&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;W:\\domains\\sanbuk-internship-main\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php&quot;,
+            &quot;line&quot;: 134,
+            &quot;function&quot;: &quot;sendRequestThroughRouter&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\Kernel&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;W:\\domains\\sanbuk-internship-main\\vendor\\knuckleswtf\\scribe\\src\\Extracting\\Strategies\\Responses\\ResponseCalls.php&quot;,
+            &quot;line&quot;: 299,
+            &quot;function&quot;: &quot;handle&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\Kernel&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;W:\\domains\\sanbuk-internship-main\\vendor\\knuckleswtf\\scribe\\src\\Extracting\\Strategies\\Responses\\ResponseCalls.php&quot;,
+            &quot;line&quot;: 287,
+            &quot;function&quot;: &quot;callLaravelOrLumenRoute&quot;,
+            &quot;class&quot;: &quot;Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;W:\\domains\\sanbuk-internship-main\\vendor\\knuckleswtf\\scribe\\src\\Extracting\\Strategies\\Responses\\ResponseCalls.php&quot;,
+            &quot;line&quot;: 92,
+            &quot;function&quot;: &quot;makeApiCall&quot;,
+            &quot;class&quot;: &quot;Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;W:\\domains\\sanbuk-internship-main\\vendor\\knuckleswtf\\scribe\\src\\Extracting\\Strategies\\Responses\\ResponseCalls.php&quot;,
+            &quot;line&quot;: 45,
+            &quot;function&quot;: &quot;makeResponseCall&quot;,
+            &quot;class&quot;: &quot;Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;W:\\domains\\sanbuk-internship-main\\vendor\\knuckleswtf\\scribe\\src\\Extracting\\Strategies\\Responses\\ResponseCalls.php&quot;,
+            &quot;line&quot;: 35,
+            &quot;function&quot;: &quot;makeResponseCallIfConditionsPass&quot;,
+            &quot;class&quot;: &quot;Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;W:\\domains\\sanbuk-internship-main\\vendor\\knuckleswtf\\scribe\\src\\Extracting\\Extractor.php&quot;,
+            &quot;line&quot;: 209,
+            &quot;function&quot;: &quot;__invoke&quot;,
+            &quot;class&quot;: &quot;Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;W:\\domains\\sanbuk-internship-main\\vendor\\knuckleswtf\\scribe\\src\\Extracting\\Extractor.php&quot;,
+            &quot;line&quot;: 166,
+            &quot;function&quot;: &quot;iterateThroughStrategies&quot;,
+            &quot;class&quot;: &quot;Knuckles\\Scribe\\Extracting\\Extractor&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;W:\\domains\\sanbuk-internship-main\\vendor\\knuckleswtf\\scribe\\src\\Extracting\\Extractor.php&quot;,
+            &quot;line&quot;: 95,
+            &quot;function&quot;: &quot;fetchResponses&quot;,
+            &quot;class&quot;: &quot;Knuckles\\Scribe\\Extracting\\Extractor&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;W:\\domains\\sanbuk-internship-main\\vendor\\knuckleswtf\\scribe\\src\\GroupedEndpoints\\GroupedEndpointsFromApp.php&quot;,
+            &quot;line&quot;: 124,
+            &quot;function&quot;: &quot;processRoute&quot;,
+            &quot;class&quot;: &quot;Knuckles\\Scribe\\Extracting\\Extractor&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;W:\\domains\\sanbuk-internship-main\\vendor\\knuckleswtf\\scribe\\src\\GroupedEndpoints\\GroupedEndpointsFromApp.php&quot;,
+            &quot;line&quot;: 71,
+            &quot;function&quot;: &quot;extractEndpointsInfoFromLaravelApp&quot;,
+            &quot;class&quot;: &quot;Knuckles\\Scribe\\GroupedEndpoints\\GroupedEndpointsFromApp&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;W:\\domains\\sanbuk-internship-main\\vendor\\knuckleswtf\\scribe\\src\\GroupedEndpoints\\GroupedEndpointsFromApp.php&quot;,
+            &quot;line&quot;: 49,
+            &quot;function&quot;: &quot;extractEndpointsInfoAndWriteToDisk&quot;,
+            &quot;class&quot;: &quot;Knuckles\\Scribe\\GroupedEndpoints\\GroupedEndpointsFromApp&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;W:\\domains\\sanbuk-internship-main\\vendor\\knuckleswtf\\scribe\\src\\Commands\\GenerateDocumentation.php&quot;,
+            &quot;line&quot;: 51,
+            &quot;function&quot;: &quot;get&quot;,
+            &quot;class&quot;: &quot;Knuckles\\Scribe\\GroupedEndpoints\\GroupedEndpointsFromApp&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;W:\\domains\\sanbuk-internship-main\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php&quot;,
+            &quot;line&quot;: 36,
+            &quot;function&quot;: &quot;handle&quot;,
+            &quot;class&quot;: &quot;Knuckles\\Scribe\\Commands\\GenerateDocumentation&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;W:\\domains\\sanbuk-internship-main\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Util.php&quot;,
+            &quot;line&quot;: 41,
+            &quot;function&quot;: &quot;Illuminate\\Container\\{closure}&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Container\\BoundMethod&quot;,
+            &quot;type&quot;: &quot;::&quot;
+        },
+        {
+            &quot;file&quot;: &quot;W:\\domains\\sanbuk-internship-main\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php&quot;,
+            &quot;line&quot;: 93,
+            &quot;function&quot;: &quot;unwrapIfClosure&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Container\\Util&quot;,
+            &quot;type&quot;: &quot;::&quot;
+        },
+        {
+            &quot;file&quot;: &quot;W:\\domains\\sanbuk-internship-main\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php&quot;,
+            &quot;line&quot;: 37,
+            &quot;function&quot;: &quot;callBoundMethod&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Container\\BoundMethod&quot;,
+            &quot;type&quot;: &quot;::&quot;
+        },
+        {
+            &quot;file&quot;: &quot;W:\\domains\\sanbuk-internship-main\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php&quot;,
+            &quot;line&quot;: 661,
+            &quot;function&quot;: &quot;call&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Container\\BoundMethod&quot;,
+            &quot;type&quot;: &quot;::&quot;
+        },
+        {
+            &quot;file&quot;: &quot;W:\\domains\\sanbuk-internship-main\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php&quot;,
+            &quot;line&quot;: 183,
+            &quot;function&quot;: &quot;call&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Container\\Container&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;W:\\domains\\sanbuk-internship-main\\vendor\\symfony\\console\\Command\\Command.php&quot;,
+            &quot;line&quot;: 312,
+            &quot;function&quot;: &quot;execute&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Console\\Command&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;W:\\domains\\sanbuk-internship-main\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php&quot;,
+            &quot;line&quot;: 153,
+            &quot;function&quot;: &quot;run&quot;,
+            &quot;class&quot;: &quot;Symfony\\Component\\Console\\Command\\Command&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;W:\\domains\\sanbuk-internship-main\\vendor\\symfony\\console\\Application.php&quot;,
+            &quot;line&quot;: 1022,
+            &quot;function&quot;: &quot;run&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Console\\Command&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;W:\\domains\\sanbuk-internship-main\\vendor\\symfony\\console\\Application.php&quot;,
+            &quot;line&quot;: 314,
+            &quot;function&quot;: &quot;doRunCommand&quot;,
+            &quot;class&quot;: &quot;Symfony\\Component\\Console\\Application&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;W:\\domains\\sanbuk-internship-main\\vendor\\symfony\\console\\Application.php&quot;,
+            &quot;line&quot;: 168,
+            &quot;function&quot;: &quot;doRun&quot;,
+            &quot;class&quot;: &quot;Symfony\\Component\\Console\\Application&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;W:\\domains\\sanbuk-internship-main\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Application.php&quot;,
+            &quot;line&quot;: 102,
+            &quot;function&quot;: &quot;run&quot;,
+            &quot;class&quot;: &quot;Symfony\\Component\\Console\\Application&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;W:\\domains\\sanbuk-internship-main\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php&quot;,
+            &quot;line&quot;: 155,
+            &quot;function&quot;: &quot;run&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Console\\Application&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;W:\\domains\\sanbuk-internship-main\\artisan&quot;,
+            &quot;line&quot;: 37,
+            &quot;function&quot;: &quot;handle&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Foundation\\Console\\Kernel&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        }
+    ]
+}</code>
+ </pre>
+    </span>
+        <span id="execution-results-GETapi-v1-bookings-webhooks-charge-succeeded" hidden>
     <blockquote>Received response<span
-            id="execution-response-status-POSTapi-v1-bookings-webhooks-charge-succeeded"></span>:
+            id="execution-response-status-GETapi-v1-bookings-webhooks-charge-succeeded"></span>:
     </blockquote>
-    <pre class="json"><code id="execution-response-content-POSTapi-v1-bookings-webhooks-charge-succeeded"
+    <pre class="json"><code id="execution-response-content-GETapi-v1-bookings-webhooks-charge-succeeded"
                             style="max-height: 400px;"></code></pre>
 </span>
-        <span id="execution-error-POSTapi-v1-bookings-webhooks-charge-succeeded" hidden>
+        <span id="execution-error-GETapi-v1-bookings-webhooks-charge-succeeded" hidden>
     <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-POSTapi-v1-bookings-webhooks-charge-succeeded"></code></pre>
+    <pre><code id="execution-error-message-GETapi-v1-bookings-webhooks-charge-succeeded"></code></pre>
 </span>
-        <form id="form-POSTapi-v1-bookings-webhooks-charge-succeeded" data-method="POST"
+        <form id="form-GETapi-v1-bookings-webhooks-charge-succeeded" data-method="GET"
               data-path="api/v1/bookings/webhooks/charge/succeeded"
               data-authed="0"
               data-hasfiles="0"
               data-isarraybody="0"
               autocomplete="off"
-              onsubmit="event.preventDefault(); executeTryOut('POSTapi-v1-bookings-webhooks-charge-succeeded', this);">
+              onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-bookings-webhooks-charge-succeeded', this);">
             <h3>
                 Request&nbsp;&nbsp;&nbsp;
                 <button type="button"
                         style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                        id="btn-tryout-POSTapi-v1-bookings-webhooks-charge-succeeded"
-                        onclick="tryItOut('POSTapi-v1-bookings-webhooks-charge-succeeded');">Try it out ⚡
+                        id="btn-tryout-GETapi-v1-bookings-webhooks-charge-succeeded"
+                        onclick="tryItOut('GETapi-v1-bookings-webhooks-charge-succeeded');">Try it out ⚡
                 </button>
                 <button type="button"
                         style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                        id="btn-canceltryout-POSTapi-v1-bookings-webhooks-charge-succeeded"
-                        onclick="cancelTryOut('POSTapi-v1-bookings-webhooks-charge-succeeded');" hidden>Cancel 🛑
+                        id="btn-canceltryout-GETapi-v1-bookings-webhooks-charge-succeeded"
+                        onclick="cancelTryOut('GETapi-v1-bookings-webhooks-charge-succeeded');" hidden>Cancel 🛑
                 </button>&nbsp;&nbsp;
                 <button type="submit"
                         style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                        id="btn-executetryout-POSTapi-v1-bookings-webhooks-charge-succeeded" hidden>Send Request 💥
+                        id="btn-executetryout-GETapi-v1-bookings-webhooks-charge-succeeded" hidden>Send Request 💥
                 </button>
             </h3>
             <p>
+                <small class="badge badge-green">GET</small>
+                <b><code>api/v1/bookings/webhooks/charge/succeeded</code></b>
+            </p>
+            <p>
                 <small class="badge badge-black">POST</small>
+                <b><code>api/v1/bookings/webhooks/charge/succeeded</code></b>
+            </p>
+            <p>
+                <small class="badge badge-darkblue">PUT</small>
+                <b><code>api/v1/bookings/webhooks/charge/succeeded</code></b>
+            </p>
+            <p>
+                <small class="badge badge-purple">PATCH</small>
+                <b><code>api/v1/bookings/webhooks/charge/succeeded</code></b>
+            </p>
+            <p>
+                <small class="badge badge-red">DELETE</small>
+                <b><code>api/v1/bookings/webhooks/charge/succeeded</code></b>
+            </p>
+            <p>
+                <small class="badge badge-grey">OPTIONS</small>
                 <b><code>api/v1/bookings/webhooks/charge/succeeded</code></b>
             </p>
             <h4 class="fancy-heading-panel"><b>Headers</b></h4>
@@ -562,7 +1086,7 @@ fetch(url, {
                 &nbsp;
                 &nbsp;
                 <input type="text" style="display: none"
-                       name="Content-Type" data-endpoint="POSTapi-v1-bookings-webhooks-charge-succeeded"
+                       name="Content-Type" data-endpoint="GETapi-v1-bookings-webhooks-charge-succeeded"
                        value="application/json"
                        data-component="header">
                 <br>
@@ -573,7 +1097,169 @@ fetch(url, {
                 &nbsp;
                 &nbsp;
                 <input type="text" style="display: none"
-                       name="Accept" data-endpoint="POSTapi-v1-bookings-webhooks-charge-succeeded"
+                       name="Accept" data-endpoint="GETapi-v1-bookings-webhooks-charge-succeeded"
+                       value="application/json"
+                       data-component="header">
+                <br>
+                <p>Example: <code>application/json</code></p>
+            </div>
+        </form>
+
+        <h2 id="endpoints-GETapi-v1-users">GET api/v1/users</h2>
+
+        <p>
+        </p>
+
+
+        <span id="example-requests-GETapi-v1-users">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://sanbuk-internship-main/api/v1/users" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://sanbuk-internship-main/api/v1/users"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+        <span id="example-responses-GETapi-v1-users">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+accept: application/json
+x-ratelimit-limit: 60
+x-ratelimit-remaining: 55
+access-control-allow-origin: *
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;status&quot;: 200,
+    &quot;data&quot;: [
+        {
+            &quot;id&quot;: 1
+        },
+        {
+            &quot;id&quot;: 2
+        },
+        {
+            &quot;id&quot;: 3
+        },
+        {
+            &quot;id&quot;: 4
+        },
+        {
+            &quot;id&quot;: 5
+        },
+        {
+            &quot;id&quot;: 6
+        },
+        {
+            &quot;id&quot;: 7
+        },
+        {
+            &quot;id&quot;: 8
+        },
+        {
+            &quot;id&quot;: 9
+        },
+        {
+            &quot;id&quot;: 10
+        },
+        {
+            &quot;id&quot;: 26
+        },
+        {
+            &quot;id&quot;: 27
+        },
+        {
+            &quot;id&quot;: 28
+        },
+        {
+            &quot;id&quot;: 29
+        }
+    ]
+}</code>
+ </pre>
+    </span>
+        <span id="execution-results-GETapi-v1-users" hidden>
+    <blockquote>Received response<span
+            id="execution-response-status-GETapi-v1-users"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-v1-users" style="max-height: 400px;"></code></pre>
+</span>
+        <span id="execution-error-GETapi-v1-users" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-v1-users"></code></pre>
+</span>
+        <form id="form-GETapi-v1-users" data-method="GET"
+              data-path="api/v1/users"
+              data-authed="0"
+              data-hasfiles="0"
+              data-isarraybody="0"
+              autocomplete="off"
+              onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-users', this);">
+            <h3>
+                Request&nbsp;&nbsp;&nbsp;
+                <button type="button"
+                        style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                        id="btn-tryout-GETapi-v1-users"
+                        onclick="tryItOut('GETapi-v1-users');">Try it out ⚡
+                </button>
+                <button type="button"
+                        style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                        id="btn-canceltryout-GETapi-v1-users"
+                        onclick="cancelTryOut('GETapi-v1-users');" hidden>Cancel 🛑
+                </button>&nbsp;&nbsp;
+                <button type="submit"
+                        style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                        id="btn-executetryout-GETapi-v1-users" hidden>Send Request 💥
+                </button>
+            </h3>
+            <p>
+                <small class="badge badge-green">GET</small>
+                <b><code>api/v1/users</code></b>
+            </p>
+            <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+            <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+                &nbsp;
+                &nbsp;
+                <input type="text" style="display: none"
+                       name="Content-Type" data-endpoint="GETapi-v1-users"
+                       value="application/json"
+                       data-component="header">
+                <br>
+                <p>Example: <code>application/json</code></p>
+            </div>
+            <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+                &nbsp;
+                &nbsp;
+                <input type="text" style="display: none"
+                       name="Accept" data-endpoint="GETapi-v1-users"
                        value="application/json"
                        data-component="header">
                 <br>
@@ -1014,7 +1700,7 @@ fetch(url, {
 content-type: application/json
 accept: application/json
 x-ratelimit-limit: 60
-x-ratelimit-remaining: 57
+x-ratelimit-remaining: 56
 access-control-allow-origin: *
  </code></pre></details>         <pre>
 
@@ -1149,7 +1835,7 @@ access-control-allow-origin: *
     --header "Accept: application/json" \
     --header "Authorization: Bearer " \
     --data "{
-    \"product_id\": \"voluptatum\"
+    \"product_id\": \"odio\"
 }"
 </code></pre></div>
 
@@ -1166,7 +1852,7 @@ const headers = {
 };
 
 let body = {
-    "product_id": "voluptatum"
+    "product_id": "odio"
 };
 
 fetch(url, {
@@ -1259,10 +1945,10 @@ fetch(url, {
                 &nbsp;
                 <input type="text" style="display: none"
                        name="product_id" data-endpoint="POSTapi-v1-products-buyProduct"
-                       value="voluptatum"
+                       value="odio"
                        data-component="body">
                 <br>
-                <p>Example: <code>voluptatum</code></p>
+                <p>Example: <code>odio</code></p>
             </div>
         </form>
 
@@ -1286,10 +1972,10 @@ fetch(url, {
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"first_name\": \"maiores\",
-    \"last_name\": \"natus\",
-    \"phone\": \"voluptatum\",
-    \"email\": \"rau.myrna@example.com\"
+    \"first_name\": \"quis\",
+    \"last_name\": \"quia\",
+    \"phone\": \"nihil\",
+    \"email\": \"mweber@example.org\"
 }"
 </code></pre></div>
 
@@ -1305,10 +1991,10 @@ const headers = {
 };
 
 let body = {
-    "first_name": "maiores",
-    "last_name": "natus",
-    "phone": "voluptatum",
-    "email": "rau.myrna@example.com"
+    "first_name": "quis",
+    "last_name": "quia",
+    "phone": "nihil",
+    "email": "mweber@example.org"
 };
 
 fetch(url, {
@@ -1349,7 +2035,7 @@ fetch(url, {
                 <button type="button"
                         style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
                         id="btn-canceltryout-POSTapi-v1-auth-sign-up"
-                    onclick="cancelTryOut('POSTapi-v1-auth-sign-up');" hidden>Cancel 🛑
+                        onclick="cancelTryOut('POSTapi-v1-auth-sign-up');" hidden>Cancel 🛑
                 </button>&nbsp;&nbsp;
                 <button type="submit"
                         style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
@@ -1390,10 +2076,10 @@ fetch(url, {
                 &nbsp;
                 <input type="text" style="display: none"
                        name="first_name" data-endpoint="POSTapi-v1-auth-sign-up"
-                       value="maiores"
+                       value="quis"
                        data-component="body">
                 <br>
-                <p>Example: <code>maiores</code></p>
+                <p>Example: <code>quis</code></p>
             </div>
             <div style=" padding-left: 28px;  clear: unset;">
                 <b style="line-height: 2;"><code>last_name</code></b>&nbsp;&nbsp;
@@ -1401,10 +2087,10 @@ fetch(url, {
                 &nbsp;
                 <input type="text" style="display: none"
                        name="last_name" data-endpoint="POSTapi-v1-auth-sign-up"
-                       value="natus"
+                       value="quia"
                        data-component="body">
                 <br>
-                <p>Example: <code>natus</code></p>
+                <p>Example: <code>quia</code></p>
             </div>
             <div style=" padding-left: 28px;  clear: unset;">
                 <b style="line-height: 2;"><code>phone</code></b>&nbsp;&nbsp;
@@ -1412,10 +2098,10 @@ fetch(url, {
                 &nbsp;
                 <input type="text" style="display: none"
                        name="phone" data-endpoint="POSTapi-v1-auth-sign-up"
-                       value="voluptatum"
+                       value="nihil"
                        data-component="body">
                 <br>
-                <p>Example: <code>voluptatum</code></p>
+                <p>Example: <code>nihil</code></p>
             </div>
             <div style=" padding-left: 28px;  clear: unset;">
                 <b style="line-height: 2;"><code>email</code></b>&nbsp;&nbsp;
@@ -1423,10 +2109,10 @@ fetch(url, {
                 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                        name="email" data-endpoint="POSTapi-v1-auth-sign-up"
-                       value="rau.myrna@example.com"
+                       value="mweber@example.org"
                        data-component="body">
                 <br>
-                <p>Must be a valid email address. Example: <code>rau.myrna@example.com</code></p>
+                <p>Must be a valid email address. Example: <code>mweber@example.org</code></p>
             </div>
         </form>
 
@@ -1446,7 +2132,7 @@ fetch(url, {
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"phone\": \"doloremque\"
+    \"phone\": \"non\"
 }"
 </code></pre></div>
 
@@ -1462,7 +2148,7 @@ const headers = {
 };
 
 let body = {
-    "phone": "doloremque"
+    "phone": "non"
 };
 
 fetch(url, {
@@ -1503,7 +2189,7 @@ fetch(url, {
                 <button type="button"
                         style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
                         id="btn-canceltryout-POSTapi-v1-auth-sign-in"
-                    onclick="cancelTryOut('POSTapi-v1-auth-sign-in');" hidden>Cancel 🛑
+                        onclick="cancelTryOut('POSTapi-v1-auth-sign-in');" hidden>Cancel 🛑
                 </button>&nbsp;&nbsp;
                 <button type="submit"
                         style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
@@ -1544,10 +2230,10 @@ fetch(url, {
                 &nbsp;
                 <input type="text" style="display: none"
                        name="phone" data-endpoint="POSTapi-v1-auth-sign-in"
-                       value="doloremque"
+                       value="non"
                        data-component="body">
                 <br>
-                <p>Example: <code>doloremque</code></p>
+                <p>Example: <code>non</code></p>
             </div>
         </form>
 
@@ -1567,8 +2253,8 @@ fetch(url, {
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"phone\": \"iusto\",
-    \"code\": \"est\"
+    \"phone\": \"cum\",
+    \"code\": \"voluptatibus\"
 }"
 </code></pre></div>
 
@@ -1584,8 +2270,8 @@ const headers = {
 };
 
 let body = {
-    "phone": "iusto",
-    "code": "est"
+    "phone": "cum",
+    "code": "voluptatibus"
 };
 
 fetch(url, {
@@ -1626,7 +2312,7 @@ fetch(url, {
                 <button type="button"
                         style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
                         id="btn-canceltryout-POSTapi-v1-auth-verification"
-                    onclick="cancelTryOut('POSTapi-v1-auth-verification');" hidden>Cancel 🛑
+                        onclick="cancelTryOut('POSTapi-v1-auth-verification');" hidden>Cancel 🛑
                 </button>&nbsp;&nbsp;
                 <button type="submit"
                         style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
@@ -1667,10 +2353,10 @@ fetch(url, {
                 &nbsp;
                 <input type="text" style="display: none"
                        name="phone" data-endpoint="POSTapi-v1-auth-verification"
-                       value="iusto"
+                       value="cum"
                        data-component="body">
                 <br>
-                <p>Example: <code>iusto</code></p>
+                <p>Example: <code>cum</code></p>
             </div>
             <div style=" padding-left: 28px;  clear: unset;">
                 <b style="line-height: 2;"><code>code</code></b>&nbsp;&nbsp;
@@ -1678,10 +2364,10 @@ fetch(url, {
                 &nbsp;
                 <input type="text" style="display: none"
                        name="code" data-endpoint="POSTapi-v1-auth-verification"
-                       value="est"
+                       value="voluptatibus"
                        data-component="body">
                 <br>
-                <p>Example: <code>est</code></p>
+                <p>Example: <code>voluptatibus</code></p>
             </div>
         </form>
 
@@ -1764,16 +2450,16 @@ access-control-allow-origin: *
                     style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
                     id="btn-tryout-GETapi-v1-user-profile"
                     onclick="tryItOut('GETapi-v1-user-profile');">Try it out ⚡
-            </button>
-            <button type="button"
-                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-GETapi-v1-user-profile"
-                    onclick="cancelTryOut('GETapi-v1-user-profile');" hidden>Cancel 🛑
-            </button>&nbsp;&nbsp;
-            <button type="submit"
-                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-GETapi-v1-user-profile" hidden>Send Request 💥
-            </button>
+                    </button>
+        <button type="button"
+                style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                id="btn-canceltryout-GETapi-v1-user-profile"
+                onclick="cancelTryOut('GETapi-v1-user-profile');" hidden>Cancel 🛑
+        </button>&nbsp;&nbsp;
+        <button type="submit"
+                style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                id="btn-executetryout-GETapi-v1-user-profile" hidden>Send Request 💥
+        </button>
     </h3>
     <p>
         <small class="badge badge-green">GET</small>
@@ -1947,7 +2633,7 @@ fetch(url, {
     --header "Accept: application/json" \
     --header "Authorization: Bearer " \
     --data "{
-    \"stripe_price_id\": \"blanditiis\"
+    \"stripe_price_id\": \"sed\"
 }"
 </code></pre></div>
 
@@ -1964,7 +2650,7 @@ const headers = {
 };
 
 let body = {
-    "stripe_price_id": "blanditiis"
+    "stripe_price_id": "sed"
 };
 
 fetch(url, {
@@ -2057,10 +2743,10 @@ fetch(url, {
                 &nbsp;
                 <input type="text" style="display: none"
                        name="stripe_price_id" data-endpoint="POSTapi-v1-user-subscription-create"
-                       value="blanditiis"
+                       value="sed"
                        data-component="body">
                 <br>
-                <p>Example: <code>blanditiis</code></p>
+                <p>Example: <code>sed</code></p>
             </div>
         </form>
 
@@ -2082,7 +2768,7 @@ fetch(url, {
     --header "Accept: application/json" \
     --header "Authorization: Bearer " \
     --data "{
-    \"stripe_price_id\": \"libero\"
+    \"stripe_price_id\": \"similique\"
 }"
 </code></pre></div>
 
@@ -2099,7 +2785,7 @@ const headers = {
 };
 
 let body = {
-    "stripe_price_id": "libero"
+    "stripe_price_id": "similique"
 };
 
 fetch(url, {
@@ -2192,10 +2878,10 @@ fetch(url, {
                 &nbsp;
                 <input type="text" style="display: none"
                        name="stripe_price_id" data-endpoint="PATCHapi-v1-user-subscription-update"
-                       value="libero"
+                       value="similique"
                        data-component="body">
                 <br>
-                <p>Example: <code>libero</code></p>
+                <p>Example: <code>similique</code></p>
             </div>
         </form>
 
