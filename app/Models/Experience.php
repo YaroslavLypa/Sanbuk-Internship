@@ -90,4 +90,9 @@ class Experience extends Model implements HasMedia, StatusInterface
     {
         return $query->whereRelation('vendor', 'status', Vendor::STATUS_ACTIVE);
     }
+
+    public function getMinimalPackagePrice()
+    {
+        return $this->packages->min('price') ?? 0;
+    }
 }

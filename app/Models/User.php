@@ -4,9 +4,11 @@ namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use App\Events\UserCreated;
+use App\Models\Interfaces\StatusInterface;
 use Cmdinglasan\FilamentBoringAvatars\Traits\HasAvatarUrl;
 use Database\Factories\UserFactory;
 use Eloquent;
+use Filament\Models\Contracts\FilamentUser;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -60,15 +62,13 @@ use Spatie\MediaLibrary\MediaCollections\Models\Media;
  * @method static Builder|User whereUpdatedAt($value)
  * @mixin Eloquent
  */
-class User extends Authenticatable implements HasMedia
+class User extends Authenticatable implements HasMedia, StatusInterface, FilamentUser
 {
     use HasApiTokens, HasFactory, Notifiable, HasAvatarUrl, InteractsWithMedia, SoftDeletes, Billable;
 
     const TYPE_USER = 0;
     const TYPE_VENDOR = 1;
-
-    const STATUS_INACTIVE = 0;
-    const STATUS_ACTIVE = 1;
+    const TYPE_ADMIN = 2;
 
     const STATUS_LIST = [
         self::STATUS_INACTIVE => 'Inactive',
@@ -78,6 +78,7 @@ class User extends Authenticatable implements HasMedia
     const TYPE_LIST = [
         self::TYPE_USER => 'User',
         self::TYPE_VENDOR => 'Vendor',
+        self::TYPE_ADMIN => 'Admin',
     ];
 
     /**
@@ -95,6 +96,7 @@ class User extends Authenticatable implements HasMedia
         'name',
         'password',
         'avatar',
+        'facebook_id',
     ];
 
     /**
@@ -131,5 +133,10 @@ class User extends Authenticatable implements HasMedia
             ->addMediaConversion('preview')
             ->fit(Manipulations::FIT_CROP, 300, 300)
             ->nonQueued();
+    }
+
+    public function canAccessFilament(): bool
+    {
+        return true;
     }
 }
